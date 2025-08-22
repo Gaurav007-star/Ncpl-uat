@@ -40,7 +40,7 @@ export default function Hero() {
               transition={{ duration: 0.2, ease: "easeOut" }}
               whileHover={{ scale: 1.1 }}
             >
-              <Button btn_name="Services" />
+              <Button btn_name="Services" route={"/service"}/>
             </motion.button>
           </motion.div>
 

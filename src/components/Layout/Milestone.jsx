@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Button from "../ui/userCreate/Button";
 import MilestoneBanner from "../../assets/MilestoneBanner.jpg";
+import { useNavigate } from "react-router";
 
 // Variants
 const fadeLeft = {
@@ -25,6 +26,8 @@ const staggerParent = {
 };
 
 const Milestone = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="px-[10vw] py-16 overflow-hidden">
       {/* Top small heading */}
@@ -100,7 +103,6 @@ const Milestone = () => {
             viewport={{ once: true }}
             className="flex gap-4"
           >
-
             {/* About us button */}
             <motion.button
               variants={fadeRight}
@@ -111,7 +113,7 @@ const Milestone = () => {
               whileTap={{ scale: 0.95 }}
               className=""
             >
-              <Button btn_name={"About Us"} />
+              <Button btn_name={"About Us"} route={"/about"} />
             </motion.button>
 
             {/* Learn More Button */}
@@ -120,6 +122,7 @@ const Milestone = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 rounded-md bg-primary text-white font-plein cursor-pointer"
+              onClick={() => navigate("/contact")}
             >
               Contact Us
             </motion.button>

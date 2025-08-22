@@ -1,6 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
-const Button = ({btn_name}) => {
+const Button = ({btn_name,route}) => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="inline-block group">
       <button
@@ -12,6 +16,7 @@ const Button = ({btn_name}) => {
           z-[1] transition-colors duration-500 
           group-hover:text-white
         "
+        onClick={()=>navigate(route)}
       >
       {btn_name} <span aria-hidden>→</span>
         <span
