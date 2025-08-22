@@ -34,15 +34,14 @@ export default function Hero() {
             </motion.h1>
 
             <motion.button
-              className="mt-8 inline-flex items-center gap-2 rounded-md border-2 border-primary text-primary px-6 py-3 cursor-pointer"
+              className="mt-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{duration: 0.2, ease: "easeOut" }}
-              whileHover={{scale:1.1}}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              whileHover={{ scale: 1.1 }}
             >
-              Services <span aria-hidden>→</span>
+              <Button btn_name="Services" />
             </motion.button>
-            <Button/>
           </motion.div>
 
           {/* Right: top image */}

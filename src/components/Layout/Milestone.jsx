@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Button from "../ui/userCreate/Button";
 
 // Variants
 const fadeLeft = {
@@ -98,17 +99,8 @@ const Milestone = () => {
             viewport={{ once: true }}
             className="flex gap-4"
           >
-            {/* Learn More Button */}
-            <motion.button
-              variants={fadeRight}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 rounded-md bg-primary text-white font-plein cursor-pointer"
-            >
-              Learn More
-            </motion.button>
 
-            {/* Contact Button */}
+            {/* About us button */}
             <motion.button
               variants={fadeRight}
               whileHover={{
@@ -116,9 +108,19 @@ const Milestone = () => {
                 backgroundColor: "rgba(255,255,255,0.1)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 rounded-md border border-primary text-primary font-plein cursor-pointer"
+              className=""
             >
-              Contact →
+              <Button btn_name={"About Us"} />
+            </motion.button>
+
+            {/* Learn More Button */}
+            <motion.button
+              variants={fadeRight}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 rounded-md bg-primary text-white font-plein cursor-pointer"
+            >
+              Contact Us
             </motion.button>
           </motion.div>
         </motion.div>

@@ -1,19 +1,19 @@
 import React from "react";
 
-const Button = () => {
+const Button = ({btn_name}) => {
   return (
     <div className="inline-block group">
       <button
         className="
-          relative inline-block w-32 h-10 leading-10 
+          relative inline-block px-6 py-1 gap-2 leading-10 
           cursor-pointer overflow-hidden 
           border-2 border-primary rounded-md 
-          text-primary font-medium text-[17px] 
+          text-primary 
           z-[1] transition-colors duration-500 
           group-hover:text-white
         "
       >
-        Hover me
+      {btn_name} <span aria-hidden>→</span>
         <span
           className="
             absolute w-[200px] h-[150px] rounded-full bg-primary -z-10
