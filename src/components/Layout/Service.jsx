@@ -107,9 +107,9 @@ export default function Service() {
           <motion.div
             key={index}
             variants={cardVariants}
-            whileHover={{ scale: 1.03, y: -5 }}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            className="overflow-hidden rounded-2xl ring-1 ring-gray-200 bg-white flex flex-col w-[400px] h-[500px] cursor-pointer"
+            whileHover="hover"
+            className="overflow-hidden rounded-2xl ring-1 ring-gray-200 bg-white flex flex-col w-[400px] h-[500px] cursor-pointer shadow-md hover:shadow-2xl hover:ring-primary/50 transition-all duration-500"
           >
             <div className="relative w-full h-full overflow-hidden">
               {/* Image with zoom effect */}
@@ -117,23 +117,31 @@ export default function Service() {
                 src={service.image}
                 alt={service.title}
                 className="w-full h-full object-cover"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                variants={{
+                  hover: { scale: 1.1 },
+                  initial: { scale: 1 }
+                }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               />
 
-              {/* Overlay always visible but with subtle hover fade */}
+              {/* Gradient Overlay */}
               <motion.div
-                className="absolute inset-0 bg-[#000000a8] flex items-end"
-                whileHover={{backdropFilter:blur("2px") }}
-                transition={{ duration: 0.4 }}
+                className="absolute inset-0 bg-gradient-to-t from-black to-black/50 flex items-end"
+                variants={{
+                  hover: {
+                    background:
+                      "linear-gradient(to top, black, rgba(0,0,0,.60),transparent)"
+                  }
+                }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 <div className="p-6 text-white">
-                  <h3 className="text-[22px] font-bold mb-1 font-clash">
+                  <motion.h3 className="text-[22px] font-bold mb-1 font-clash">
                     {service.title}
-                  </h3>
-                  <p className="text-[18px] text-gray-200 font-plein">
+                  </motion.h3>
+                  <motion.p className="text-[18px] text-gray-200 font-plein">
                     {service.description}
-                  </p>
+                  </motion.p>
                 </div>
               </motion.div>
             </div>
