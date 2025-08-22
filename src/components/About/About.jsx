@@ -34,7 +34,7 @@ const About = () => {
           {/* Left Small Section Title */}
           <div className="col-span-1 flex items-start">
             <h3 className="tracking-wide text-primary font-clash text-[20px] relative">
-              -- ABOUT US --
+              -- Company Profile --
             </h3>
           </div>
 

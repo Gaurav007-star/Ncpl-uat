@@ -5,9 +5,9 @@ const TopSection = ({title,description}) => {
   return (
     <div className="top-section w-full h-[600px] flex gap-2 my-10 px-[10vw]">
       {/* left-section */}
-      <div className="left-section relative w-[50%] h-full bg-primary text-white flex flex-col justify-center rounded-l-2xl p-10 overflow-hidden">
+      <div className="left-section relative w-[50%] h-full bg-primary text-white flex flex-col justify-center rounded-l-2xl p-15 overflow-hidden">
         {/* Heading with half underline */}
-        <div className="relative mb-10">
+        <div className="relative mb-10 ">
           <h1 className="font-clash text-[80px] font-extrabold leading-none">
            {title}
           </h1>
@@ -15,7 +15,7 @@ const TopSection = ({title,description}) => {
         </div>
 
         {/* Small description with modern offset */}
-        <p className="text-lg max-w-[80%] leading-relaxed ml-10 opacity-90">
+        <p className="text-lg max-w-[80%] leading-relaxed opacity-90">
             {description}
         </p>
 
