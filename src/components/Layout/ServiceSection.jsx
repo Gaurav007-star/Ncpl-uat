@@ -72,7 +72,7 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
-export default function Service() {
+export default function ServiceSection() {
   return (
     <section className="px-[10vw] py-20 bg-white ">
       {/* Heading */}
@@ -101,7 +101,7 @@ export default function Service() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid md:grid-cols-3 gap-8 mt-16"
+        className="grid grid-cols-3 max-[1025px]:grid-cols-2 max-[450px]:grid-cols-1 gap-8 mt-16"
       >
         {services.map((service, index) => (
           <motion.div
@@ -109,7 +109,7 @@ export default function Service() {
             variants={cardVariants}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
             whileHover="hover"
-            className="overflow-hidden rounded-2xl ring-1 ring-gray-200 bg-white flex flex-col w-[400px] h-[500px] cursor-pointer shadow-md hover:shadow-2xl hover:ring-primary/50 transition-all duration-500"
+            className="overflow-hidden rounded-2xl ring-1 ring-gray-200 bg-white flex flex-col w-full h-[500px] cursor-pointer shadow-md hover:shadow-2xl hover:ring-primary/50 transition-all duration-500"
           >
             <div className="relative w-full h-full overflow-hidden">
               {/* Image with zoom effect */}

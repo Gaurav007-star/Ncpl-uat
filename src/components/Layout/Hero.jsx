@@ -10,7 +10,7 @@ export default function Hero() {
       {/* vertical divider like the mock */}
       <span className="pointer-events-none absolute inset-y-10 left-1/2 hidden md:block w-px bg-neutral-200/80" />
 
-      <div className=" px-[10vw] pt-14 ">
+      <div className=" px-[10vw] pt-10 ">
         {/* top row */}
         <div className="relative grid grid-cols-1 md:grid-cols-2 items-start gap-10">
           {/* Left: headline + button */}

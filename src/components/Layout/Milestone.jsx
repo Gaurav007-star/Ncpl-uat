@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "../ui/userCreate/Button";
+import MilestoneBanner from "../../assets/MilestoneBanner.jpg";
 
 // Variants
 const fadeLeft = {
@@ -134,7 +135,7 @@ const Milestone = () => {
         viewport={{ once: true }}
       >
         <img
-          src="https://images.pexels.com/photos/7937714/pexels-photo-7937714.jpeg?_gl=1*1qgy2yr*_ga*MjM4MzU3MjQyLjE3NTQ1NjU2Mzk.*_ga_8JE65Q40S6*czE3NTU3NjQ1NzIkbzUkZzEkdDE3NTU3NjQ2NjYkajQwJGwwJGgw"
+          src={MilestoneBanner}
           alt="Milestone"
           className="rounded-2xl shadow-md w-full h-[600px] object-cover grayscale hover:grayscale-0 duration-500 cursor-pointer"
         />

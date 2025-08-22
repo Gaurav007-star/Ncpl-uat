@@ -4,6 +4,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
 import Logo from "../../assets/whiteLogo.png";
+import { Link } from "react-router";
 
 const footerData = {
   company: {
@@ -13,7 +14,7 @@ const footerData = {
     socials: [
       { icon: <FaMeta />, link: "#" },
       { icon: <FaSquareXTwitter />, link: "#" },
-      { icon: <FaLinkedin />, link: "#" },
+      { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/ntnl-construction-pvt-ltd/" },
       { icon: <AiFillInstagram />, link: "#" }
     ]
   },
@@ -24,10 +25,9 @@ const footerData = {
     "Infrastructure Projects"
   ],
   companyLinks: [
-    { label: "About Us", link: "#" },
-    { label: "Our Projects", link: "#" },
-    { label: "Careers", link: "#" },
-    { label: "Blog & News", link: "#" }
+    { label: "About Us", link: "/about" },
+    { label: "Our Projects", link: "/project" },
+    { label: "Contact us", link: "/contact" }
   ],
   contact: [
     {
@@ -67,13 +67,13 @@ export default function Footer() {
           </p>
           <div className="flex gap-4">
             {footerData.company.socials.map((social, i) => (
-              <a
+              <Link
                 key={i}
-                href={social.link}
+                to={social.link}
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 text-white hover:bg-primary hover:text-white transition"
               >
                 {social.icon}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -84,9 +84,9 @@ export default function Footer() {
           <ul className="space-y-3 font-plein text-sm">
             {footerData.services.map((service, i) => (
               <li key={i}>
-                <a href="#" className="hover:text-white transition">
+                <Link to={"/service"} className="hover:text-white transition">
                   {service}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -98,9 +98,9 @@ export default function Footer() {
           <ul className="space-y-3 font-plein text-sm">
             {footerData.companyLinks.map((item, i) => (
               <li key={i}>
-                <a href={item.link} className="hover:text-white transition">
+                <Link to={item.link} className="hover:text-white transition">
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

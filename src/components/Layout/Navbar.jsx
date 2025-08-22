@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import logo from "../../assets/ncpl-logo.png";
 import { Link, useNavigate } from "react-router";
-("react-router");
 
 const links = [
   {
     id: "home",
-    route: "#",
+    route: "/",
     title: "Home",
     heading: "Welcome to Our Website",
     subLinks: [
@@ -17,7 +16,7 @@ const links = [
   },
   {
     id: "about",
-    route: "#",
+    route: "/about",
     title: "About",
     heading: "Learn More About Us",
     subLinks: [
@@ -28,7 +27,7 @@ const links = [
   },
   {
     id: "services",
-    route: "#",
+    route: "/service",
     title: "Services",
     heading: "What We Offer",
     subLinks: [
@@ -39,7 +38,7 @@ const links = [
   },
   {
     id: "projects",
-    route: "#",
+    route: "/project",
     title: "Projects",
     heading: "Our Work",
     subLinks: [
@@ -50,7 +49,7 @@ const links = [
   },
   {
     id: "contact",
-    route: "#",
+    route: "/contact",
     title: "Contact Us",
     heading: "Get in Touch",
     subLinks: [
@@ -72,7 +71,7 @@ const Navbar = () => {
         <img
           src={logo}
           alt="logo"
-          className="w-auto h-[100px] object-cover"
+          className="w-auto h-[100px] object-cover cursor-pointer"
           onClick={() => navigate("/")}
         />
       </div>

@@ -6,7 +6,7 @@ export default function VisionMission() {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"],
+    offset: ["start end", "end start"]
   });
 
   // Parallax-like movement
@@ -16,7 +16,7 @@ export default function VisionMission() {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-20 px-[10vw] bg-white text-black space-y-20 overflow-hidden"
+      className="w-full pb-20 pt-10 px-[10vw] text-black space-y-20 overflow-hidden"
     >
       {/* Row 1: Vision + Image */}
       <div className="flex items-center gap-12">
@@ -32,7 +32,8 @@ export default function VisionMission() {
             Our Vision
           </h2>
           <p className="text-lg leading-relaxed text-secondary">
-            To be a part of India's journey in becoming a global manufacturing hub.
+            To be a part of India's journey in becoming a global manufacturing
+            hub.
           </p>
         </motion.div>
 
@@ -77,39 +78,6 @@ export default function VisionMission() {
             delivery of large-scale projects.
           </p>
         </motion.div>
-      </div>
-
-      {/* Row 3: Our Journey + Image */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <motion.div
-          style={{ opacity: fadeText }}
-          initial={{ y: 40, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-[40px] font-clash font-extrabold text-primary mb-4">
-            Our Journey
-          </h2>
-          <ul className="space-y-3 text-lg leading-relaxed text-secondary">
-            <li>Established in 2005, pioneer role in SIDCUL Industrial Estate Pantnagar.</li>
-            <li>Diverse portfolio of challenging industrial civil construction projects.</li>
-            <li>Maintained utmost statutory, industrial and business standards.</li>
-            <li>Embracing the latest technical know how.</li>
-            <li>Wide array of machinery, equipment & highly qualified and experienced staff.</li>
-          </ul>
-        </motion.div>
-
-        <motion.img
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop"
-          alt="Journey"
-          style={{ y: yImage }}
-          className="w-full h-80 object-cover rounded-2xl shadow-xl"
-          initial={{ scale: 1.05, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-          viewport={{ once: true }}
-        />
       </div>
     </section>
   );

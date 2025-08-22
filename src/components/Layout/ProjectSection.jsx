@@ -73,7 +73,7 @@ const projectCategories = {
 
 const allProjects = Object.values(projectCategories).flat();
 
-export default function Projects() {
+export default function ProjectSection() {
   const [selectedCategory, setSelectedCategory] = useState("All Projects");
 
   // pick category or all
