@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import construct01 from "../../assets/construct01.jpg";
 import construct02 from "../../assets/construct03.jpg";
+import Button from "../ui/userCreate/Button";
 
 export default function Hero() {
   return (
@@ -41,6 +42,7 @@ export default function Hero() {
             >
               Services <span aria-hidden>→</span>
             </motion.button>
+            <Button/>
           </motion.div>
 
           {/* Right: top image */}

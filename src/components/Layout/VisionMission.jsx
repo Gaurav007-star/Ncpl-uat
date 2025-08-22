@@ -3,57 +3,86 @@ import mission from "../../assets/construct05.jpg";
 
 export default function VisionMission() {
   return (
-    <section className="w-full py-15 px-[10vw]">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
-        
-        {/* Mission Section - Left */}
+    <section className="w-full py-20 px-[10vw] bg-white text-black space-y-20">
+      
+      {/* Row 1: Vision + Image */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div
-          className="w-full h-full"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h3 className="text-[40px] font-semibold text-primary font-clash mb-2">
-            Mission
-          </h3>
-          <p className="text-plein text-lg leading-relaxed text-secondary">
+          <h2 className="text-4xl font-bold mb-6">Our Vision</h2>
+          <p className="text-lg leading-relaxed text-gray-700">
+            To be a part of India's journey in becoming a global manufacturing hub.
+          </p>
+        </motion.div>
+
+        <motion.img
+          src={mission}
+          alt="Vision"
+          className="w-full h-80 object-cover rounded-lg"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+        />
+      </div>
+
+      {/* Row 2: Image + Mission */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <motion.img
+          src={mission}
+          alt="Mission"
+          className="w-full h-80 object-cover rounded-lg"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
+          <p className="text-lg leading-relaxed text-gray-700">
             To be the industry benchmark for quality, safety, and timely
             delivery of large-scale projects.
           </p>
         </motion.div>
+      </div>
 
-        {/* Image in the Center */}
+      {/* Row 3: Our Journey + Image */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div
-          className="flex justify-center h-[400px]"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <img
-            src={mission}
-            alt="Vision and Mission"
-            className="rounded-2xl shadow-lg object-cover w-auto h-full  grayscale hover:grayscale-0 duration-500 cursor-pointer"
-          />
+          <h2 className="text-4xl font-bold mb-6">Our Journey</h2>
+          <ul className="list-disc pl-6 space-y-3 text-lg leading-relaxed text-gray-700">
+            <li>Established in 2005, pioneer role in SIDCUL Industrial Estate Pantnagar.</li>
+            <li>Diverse portfolio of challenging industrial civil construction projects.</li>
+            <li>Always maintained utmost statutory, industrial and business standards.</li>
+            <li>Embracing the latest technical know how.</li>
+            <li>Wide array of machinery, equipment & highly qualified and experienced staff.</li>
+          </ul>
         </motion.div>
 
-        {/* Vision Section - Right */}
-        <motion.div
-          className="w-full h-full"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+        <motion.img
+          src={mission}
+          alt="Journey"
+          className="w-full h-80 object-cover rounded-lg"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
-        >
-          <h3 className="text-[40px] font-semibold text-primary font-clash mb-2">
-            Vision
-          </h3>
-          <p className="text-plein text-lg leading-relaxed text-secondary">
-            To be a part of India's journey in becoming a global manufacturing
-            hub.
-          </p>
-        </motion.div>
+        />
       </div>
     </section>
   );
