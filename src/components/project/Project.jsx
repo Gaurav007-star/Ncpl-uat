@@ -4,7 +4,7 @@ import TopSection from "../Layout/TopSection";
 import CtaSection from "../Layout/CtaSection";
 import Footer from "../Layout/Footer";
 import Navbar from "../Layout/Navbar";
-import ProjectTopImage from "../../assets/projects.jpg";
+import ProjectTopImage from "../../assets/Projects.jpg";
 
 
 const Project = () => {
