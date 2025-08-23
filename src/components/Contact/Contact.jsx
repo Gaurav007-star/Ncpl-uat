@@ -152,8 +152,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      <CtaSection />
       <Footer />
     </div>
   );
