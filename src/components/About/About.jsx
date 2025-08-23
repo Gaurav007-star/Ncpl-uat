@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
-import Construction from "../../assets/construct02.jpg";
 import Navbar from "../Layout/Navbar";
-
 import Founder from "../Layout/Founder";
 import Footer from "../Layout/Footer";
 import TopSection from "../Layout/TopSection";
 import CtaSection from "../Layout/CtaSection";
+import AboutTopImage from "../../assets/About us.jpg";
 
 const About = () => {
 
@@ -26,6 +25,7 @@ const About = () => {
         description={`We are a trusted construction agency, committed to delivering
           excellence, safety, and innovative solutions in every project we
           undertake.`}
+        img={AboutTopImage}
       />
 
       {/* Bottom-section */}
