@@ -27,16 +27,14 @@ const projectCategories = {
       description: "Automobile plant expansion project.",
       tags: ["Industrial", "Automobile", "Expansion"],
       img: Quarter01
-    }
-  ],
-  "Major Projects": [
+    },
     {
       title: "Titan Industries Ltd 2012",
       description: "Corporate facility setup for Titan.",
       tags: ["Corporate", "2012", "Industrial"],
       img: Quarter02
     },
-    {
+        {
       title: "Tata Taco Ltd 2016",
       description: "Production unit built in 2016.",
       tags: ["Manufacturing", "2016", "Tata Group"],
@@ -71,7 +69,7 @@ const projectCategories = {
       description: "Factory and production units.",
       tags: ["Industrial", "Manufacturing"],
       img: FallCelling
-    }
+    },
   ]
 };
 

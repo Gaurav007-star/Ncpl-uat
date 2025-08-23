@@ -68,15 +68,15 @@ const About = () => {
               </p>
 
               <p>
-                In 2019, building on over 15 years of experience, NTNL
+                In 2019, building on over 15 years of experience, National
                 Construction Pvt. Ltd. was founded, marking the next phase of
                 our journey. With deeper capabilities, a broader vision, and the
-                strong leadership of our Managing Director, NTNL is equipped in
+                strong leadership of our Managing Director, National is equipped in
                 every aspect to take on more ambitious projects.
               </p>
 
               <p>
-                Today, NTNL Construction stands empowered with a robust fleet of
+                Today, National Construction stands empowered with a robust fleet of
                 machinery, advanced technologies, and a team of qualified,
                 experienced professionals committed to excellence.
               </p>

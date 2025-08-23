@@ -5,7 +5,7 @@ import CtaSection from "../Layout/CtaSection";
 import Footer from "../Layout/Footer";
 import Navbar from "../Layout/Navbar";
 import ProjectTopImage from "../../assets/Projects.jpg";
-
+import TimelineImage from "../../assets//timelineImage.jpg";
 
 const Project = () => {
   useEffect(() => {
@@ -23,7 +23,14 @@ const Project = () => {
         description={`From Road Infrastructure to PEB showcase our expertise. Each one reflects our quality, precision, and many more successful ventures delivered with excellence.`}
         img={ProjectTopImage}
       />
-      <ProjectSection />s
+      <ProjectSection />
+      {/* Time line */}
+      <div className="timeline-section h-max flex flex-col px-[10vw] mb-30">
+        <h1 className="w-full h-max font-clash font-extrabold text-[80px] text-center text-primary mb-4">
+          Major Projects
+        </h1>
+        <img src={TimelineImage} alt="" />
+      </div>
       <CtaSection />
       <Footer />
     </div>
