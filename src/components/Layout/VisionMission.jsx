@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import OurStory from "../../assets/OurStory.jpg";
+import Journey01 from "../../assets/journey01.jpg";
 import arrowBullet from "../../assets/arrow_13476014.svg";
 import Button from "../ui/userCreate/Button";
 
@@ -110,10 +111,10 @@ export default function VisionMission() {
         <div className="w-full mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* LEft SIDE */}
-            <div className="bg-primary p-10 rounded-2xl flex justify-center md:justify-start">
+            <div className="bg-white py-10 rounded-2xl flex justify-center md:justify-start">
               <div className="w-full h-max">
                 <div className="overflow-hidden ">
-                  <h2 className="text-white font-clash font-extrabold text-[80px] leading-[100%]">
+                  <h2 className="text-primary font-clash font-extrabold text-[80px] leading-[100%]">
                     Our
                     <br />
                     Story
@@ -122,7 +123,7 @@ export default function VisionMission() {
                 </div>
 
                 {/* SUB TOPICS */}
-                <div className="mt-6 text-[18px] leading-6 text-white font-plein space-y-3">
+                <div className="mt-6 text-[18px] leading-6 text-secondary font-plein space-y-3">
                   {journeyPoints.map((item) => (
                     <div
                       key={item.id}
@@ -145,7 +146,7 @@ export default function VisionMission() {
             <div className=" w-full p-6 h-max rounded-lg text-white flex flex-col justify-start items-end">
               {/* Framed photo */}
               <img
-                src={OurStory}
+                src={Journey01}
                 alt="Construction collage"
                 className="w-full h-[500px] object-cover rounded-2xl"
               />
