@@ -1,8 +1,8 @@
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import { FaMeta } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
-import { AiFillInstagram } from "react-icons/ai";
+import { RiInstagramFill } from "react-icons/ri";
 import Logo from "../../assets/whiteLogo.png";
 import { Link } from "react-router";
 
@@ -12,10 +12,10 @@ const footerData = {
     description:
       "Professional construction services with over 20 years of experience. Building dreams into reality with quality and excellence.",
     socials: [
-      { icon: <FaMeta />, link: "#" },
+      { icon: <FaFacebook />, link: "#" },
       { icon: <FaSquareXTwitter />, link: "#" },
       { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/ntnl-construction-pvt-ltd/" },
-      { icon: <AiFillInstagram />, link: "#" }
+      { icon: <RiInstagramFill />, link: "#" }
     ]
   },
   services: [
@@ -42,10 +42,6 @@ const footerData = {
       icon: <Mail className="w-4 h-4 " />,
       text: "info@ntnlconstruction.com"
     },
-    {
-      icon: <Clock className="w-4 h-4 " />,
-      text: "Mon - Fri: 8:00 AM - 6:00 PM"
-    }
   ]
 };
 

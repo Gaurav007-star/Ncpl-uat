@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import FallCelling from "../../assets/projects/fall celling.jpg";
+import ItbpDalmau from "../../assets/projects/ITBP Dalmau, Raebareli.jpg";
+import Quarter01 from "../../assets/projects/Quarter Quard Building, CRPF Camp, Amethi.jpg";
+import Quarter02 from "../../assets/projects/Quarter Quard Building, CRPF Camp, Amethi02.jpg";
 
 // Projects grouped by categories
 const projectCategories = {
@@ -8,35 +12,35 @@ const projectCategories = {
       title: "Nestle India Pvt. Ltd",
       description: "Manufacturing facility development with modern standards.",
       tags: ["Industrial", "Efficiency", "Modern"],
-      img: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=1331&auto=format&fit=crop",
+      img: FallCelling,
       size: "md:col-span-2 md:row-span-2" // big block
     },
     {
       title: "ITBP Campus - Raebareli (CPWD)",
       description: "Infrastructure project for ITBP campus facilities.",
       tags: ["Government", "Infrastructure", "Campus"],
-      img: "https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?q=80&w=1179&auto=format&fit=crop",
+      img: ItbpDalmau,
       size: "md:col-span-2"
     },
     {
       title: "Tata Motors Ltd",
       description: "Automobile plant expansion project.",
       tags: ["Industrial", "Automobile", "Expansion"],
-      img: "https://plus.unsplash.com/premium_photo-1677522805495-20700faf5802?q=80&w=687&auto=format&fit=crop"
+      img: Quarter01
     }
   ],
-  "Major Projects Timeline": [
+  "Major Projects": [
     {
       title: "Titan Industries Ltd 2012",
       description: "Corporate facility setup for Titan.",
       tags: ["Corporate", "2012", "Industrial"],
-      img: "https://plus.unsplash.com/premium_photo-1681691757922-6d8b206abedc?q=80&w=1170&auto=format&fit=crop"
+      img: Quarter02
     },
     {
       title: "Tata Taco Ltd 2016",
       description: "Production unit built in 2016.",
       tags: ["Manufacturing", "2016", "Tata Group"],
-      img: "https://images.unsplash.com/photo-1527199768775-bdabf8b32f61?q=80&w=1170&auto=format&fit=crop",
+      img: ItbpDalmau,
       size: "md:row-span-2" // tall card
     }
   ],
@@ -45,13 +49,13 @@ const projectCategories = {
       title: "ITBP Campus - Raebareli (CPWD)",
       description: "Campus project under CPWD.",
       tags: ["Government", "CPWD", "Campus"],
-      img: "https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?q=80&w=1179&auto=format&fit=crop"
+      img: ItbpDalmau
     },
     {
       title: "CRPF Campus - Amethi (CPWD)",
       description: "CRPF training and admin blocks.",
       tags: ["Government", "CPWD", "Defense"],
-      img: "https://plus.unsplash.com/premium_photo-1677522805495-20700faf5802?q=80&w=687&auto=format&fit=crop",
+      img: Quarter02,
       size: "md:row-span-2"
     }
   ],
@@ -60,13 +64,13 @@ const projectCategories = {
       title: "Prakalp Seva Sansthan",
       description: "Community support project.",
       tags: ["Community", "Social", "Support"],
-      img: "https://images.unsplash.com/photo-1527199768775-bdabf8b32f61?q=80&w=1170&auto=format&fit=crop"
+      img: Quarter01
     },
     {
       title: "Right Tight Fastener Pvt. Ltd",
       description: "Factory and production units.",
       tags: ["Industrial", "Manufacturing"],
-      img: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=1331&auto=format&fit=crop"
+      img: FallCelling
     }
   ]
 };
@@ -129,7 +133,7 @@ export default function ProjectSection() {
       </div>
 
       {/* Bento Grid */}
-      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[250px] gap-4 grid-flow-dense">
+      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[250px] gap-2 grid-flow-dense">
         <AnimatePresence mode="wait">
           {uniqueProjects.map((project, index) => (
             <motion.div
@@ -144,19 +148,24 @@ export default function ProjectSection() {
               }}
               viewport={{ once: true }}
               whileTap={{ scale: 0.98 }}
-              className={`relative group rounded-xl overflow-hidden bg-white border border-gray-200 shadow-sm cursor-pointer
-                ${project.size || "col-span-1 row-span-1"}
-                ${
-                  project.title === "ITBP Campus - Raebareli (CPWD)"
-                    ? "md:col-span-4 md:row-start-4"
-                    : ""
-                }
-                ${
-                  project.title === "Nestle India Pvt. Ltd"
-                    ? "md:col-span-2 md:row-span-1 md:col-start-2 md:row-start-1"
-                    : ""
-                }
-              `}
+              className={
+                selectedCategory === "All Projects"
+                  ? `relative group rounded-xl overflow-hidden bg-white border border-gray-200 shadow-sm cursor-pointer
+          ${project.size || "col-span-1 row-span-1"}
+          ${
+            project.title === "ITBP Campus - Raebareli (CPWD)"
+              ? "md:col-span-4 md:row-start-4"
+              : ""
+          }
+          ${
+            project.title === "Nestle India Pvt. Ltd"
+              ? "md:col-span-2 md:row-span-1 md:col-start-2 md:row-start-1"
+              : ""
+          }
+        `
+                  : `relative group rounded-xl overflow-hidden bg-white border border-gray-200 shadow-sm cursor-pointer
+          ${project.size || "col-span-1 row-span-1"}`
+              }
             >
               {/* Image */}
               <img

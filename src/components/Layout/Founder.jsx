@@ -33,53 +33,28 @@ export default function Founder() {
               className="font-plein text-secondary text-base md:text-lg leading-relaxed space-y-6 mb-10"
             >
               <p>
-                Born and raised in a small village in Uttar Pradesh, our
-                founder’s story is rooted in simplicity, resilience, and
-                unshakable faith. The grandson of a freedom fighter and son of a
-                farmer, he grew up grounded in strong values and humble means —
-                a childhood shaped more by character than comfort.
+                Born in a small village in Uttar Pradesh, the founder of NTNL
+                Construction embodies resilience, humility, and faith. The
+                grandson of a freedom fighter and son of a farmer, his childhood
+                was defined by strong values rather than material comforts. From
+                an early age, he was socially active and outspoken, showing
+                leadership even as a boy.
               </p>
 
               <p>
-                From a young age, he was deeply socially active, curious, and
-                driven. At just 10, he was already participating in local
-                initiatives, questioning norms, and making his voice heard.
+                A defining moment came when he failed his 11th-grade exams, only
+                to be encouraged by his grandfather to think like an
+                entrepreneur. Determined to prove himself, he turned setbacks
+                into discipline, eventually excelling academically, authoring a
+                book, and developing into a self-made entrepreneur.
               </p>
 
               <p>
-                He often laughs now as he tells one of his favorite stories: how
-                he failed all five subjects in his 11th-grade exams — and how
-                the only thing his granddad said to him was, “Good, now you
-                should start your business.”
-              </p>
-
-              <p>
-                But when the time came to prove himself, he poured in 18-hour
-                study days, emerging not just as a student of books, but as a
-                student of life. What sets him apart is his ability to fall in
-                love with whatever he does — not because life was always ideal,
-                but because he learned how to find beauty in it.
-              </p>
-
-              <p>
-                With unwavering faith in God, he never second-guesses his
-                choices. He moves forward, always forward. From a scrappy,
-                street-smart kid to an academic who authored a book, and
-                eventually a self-made entrepreneur, his evolution has been
-                nothing short of extraordinary.
-              </p>
-
-              <p>
-                Today, he leads NTNL Construction with humility and vision,
-                employing more than 1000 people, and giving back generously to
-                the village, city, and society that shaped him. He never
-                imagined achieving so much. But now that he’s gone beyond those
-                early dreams, he no longer limits his vision.
-              </p>
-
-              <p>
-                Today, he dares to dream beyond imagination — grounded in faith,
-                and driven by purpose.
+                What distinguishes him is his ability to embrace and find beauty
+                in whatever he does, guided by unwavering faith in God and a
+                forward-looking mindset. Today, he leads NTNL Construction with
+                over 1,000 employees, giving back generously to his community
+                while daring to dream beyond imagination.
               </p>
             </motion.div>
           )}

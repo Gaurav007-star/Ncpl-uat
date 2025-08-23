@@ -5,6 +5,8 @@ import TopSection from "../Layout/TopSection";
 import InfinitySlider from "../Layout/InfinitySlider";
 import CtaSection from "../Layout/CtaSection";
 import Footer from "../Layout/Footer";
+import ConstructionWorker from "../../assets/constructionWorker.jpg";
+import ContactTopImage from "../../assets/Contacts.jpg";
 
 const Contact = () => {
   useEffect(() => {
@@ -21,8 +23,9 @@ const Contact = () => {
       <TopSection
         title={"Contact Us"}
         description={
-          "We are a trusted construction agency, committed to delivering excellence, safety, and innovative solutions in every project we undertake."
+          "We're here to connect and collaborate. Reach out to us for inquiries, project discussions, or partnership opportunities. Our team is ready to provide the support and guidance you need."
         }
+        img={ContactTopImage}
       />
 
       <InfinitySlider />
@@ -33,7 +36,7 @@ const Contact = () => {
           {/* Left: Image */}
           <div className="rounded-2xl overflow-hidden h-[600px]">
             <img
-              src="https://images.unsplash.com/photo-1672748341520-6a839e6c05bb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={ConstructionWorker}
               alt="NTNL office building"
               className="w-full h-full object-cover"
             />
@@ -107,7 +110,8 @@ const Contact = () => {
               We’d Love to Hear From You.
             </h3>
             <p className="font-plein text-secondary">
-              Or just reach out manually
+              Or simply reach out — by phone, email, or in person — and we’ll be
+              happy to assist you.
             </p>
           </div>
 

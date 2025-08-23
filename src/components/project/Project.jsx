@@ -4,6 +4,8 @@ import TopSection from "../Layout/TopSection";
 import CtaSection from "../Layout/CtaSection";
 import Footer from "../Layout/Footer";
 import Navbar from "../Layout/Navbar";
+import ProjectTopImage from "../../assets/projects.jpg";
+
 
 const Project = () => {
   useEffect(() => {
@@ -18,9 +20,8 @@ const Project = () => {
       <Navbar />
       <TopSection
         title={"Projects"}
-        description={`We are a trusted construction agency, committed to delivering
-          excellence, safety, and innovative solutions in every project we
-          undertake.`}
+        description={`From Road Infrastructure to PEB showcase our expertise. Each one reflects our quality, precision, and many more successful ventures delivered with excellence.`}
+        img={ProjectTopImage}
       />
       <ProjectSection />s
       <CtaSection />

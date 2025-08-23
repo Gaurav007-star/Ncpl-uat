@@ -130,18 +130,24 @@ const Milestone = () => {
         </motion.div>
       </div>
 
-      {/* Image Section */}
+
+{/* BOTTOM IMAGE SECTION */}
       <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
+        className="mt-12"
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        viewport={{ once: true, amount: 0.3 }}
       >
-        <img
-          src={MilestoneBanner}
-          alt="Milestone"
-          className="rounded-2xl shadow-md w-full h-[600px] object-cover grayscale hover:grayscale-0 duration-500 cursor-pointer"
-        />
+        <div className="overflow-hidden rounded-xl shadow-sm ring-1 ring-black/5">
+          <motion.img
+            src={MilestoneBanner}
+            alt="workers on site"
+            className="block h-[360px] md:h-[500px] w-full object-cover object-top filter grayscale hover:grayscale-0 cursor-pointer duration-500"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.1, ease: "easeInOut" }}
+          />
+        </div>
       </motion.div>
     </div>
   );

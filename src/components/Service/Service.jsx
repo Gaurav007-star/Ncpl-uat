@@ -4,6 +4,8 @@ import TopSection from "../Layout/TopSection";
 import ServiceSection from "../Layout/ServiceSection";
 import CtaSection from "../Layout/CtaSection";
 import Footer from "../Layout/Footer";
+import ServicesTopImage from "../../assets/services.jpg";
+
 
 const Service = () => {
 
@@ -20,9 +22,8 @@ const Service = () => {
 
       <TopSection
         title={"Services"}
-        description={`We are a trusted construction agency, committed to delivering
-          excellence, safety, and innovative solutions in every project we
-          undertake.`}
+        description={`We specialize in Industrial Civil Construction and Turnkey Project Execution, along with many more solutions that ensure quality, safety, and innovation in every build.`}
+        img={ServicesTopImage}
       />
 
       <ServiceSection/>
