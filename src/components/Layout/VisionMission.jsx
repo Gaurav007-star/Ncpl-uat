@@ -42,10 +42,10 @@ export default function VisionMission() {
   return (
     <section
       ref={sectionRef}
-      className="w-full pb-20 pt-10 px-[10vw] text-black space-y-20 overflow-hidden"
+      className="w-full pb-20 pt-10  text-black space-y-20 overflow-hidden"
     >
       {/* Row 1: Vision + Image */}
-      <div className="flex items-center gap-12">
+      <div className="flex items-center gap-12 px-[10vw]">
         <motion.div
           style={{ opacity: fadeText }}
           initial={{ y: 40, opacity: 0 }}
@@ -76,7 +76,7 @@ export default function VisionMission() {
       </div>
 
       {/* Row 2: Image + Mission */}
-      <div className="flex gap-12 items-center">
+      <div className="flex gap-12 items-center px-[10vw]">
         <motion.img
           src="https://plus.unsplash.com/premium_photo-1663088543643-2a1ebfc830b6?q=80&w=1172&auto=format&fit=crop"
           alt="Mission"
@@ -107,27 +107,25 @@ export default function VisionMission() {
       </div>
 
       {/* JOURNEY */}
-      <section className="w-full bg-white">
-        <div className="w-full mx-auto">
+      <section className="w-full  px-[10vw]">
+        <div className="w-full bg-primary shadow-[5px_5px_20px_#757687ab] p-15 rounded-2xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* LEft SIDE */}
-            <div className="bg-white py-10 rounded-2xl flex justify-center md:justify-start">
+            <div className="py-10 rounded-2xl flex justify-center md:justify-start">
               <div className="w-full h-max">
                 <div className="overflow-hidden ">
-                  <h2 className="text-primary font-clash font-extrabold text-[80px] leading-[100%]">
-                    Our
-                    <br />
-                    Story
+                  <h2 className="text-white font-clash font-extrabold text-[80px] leading-[100%] tracking-wider">
+                    Our Story
                   </h2>
-                  <div className="mt-3 w-full h-1 bg-white"></div>
+                  {/* <div className="mt-3 w-[70%] h-1 bg-white"></div> */}
                 </div>
 
                 {/* SUB TOPICS */}
-                <div className="mt-6 text-[18px] leading-6 text-secondary font-plein space-y-3">
+                <div className="mt-6 text-[18px] leading-6 pr-20 text-white font-plein space-y-3 min-[1600px]:space-y-7 min-[1600px]:text-[24px]">
                   {journeyPoints.map((item) => (
                     <div
                       key={item.id}
-                      className="w-full flex items-start gap-2"
+                      className={`w-full flex items-start gap-2 ${item.id == 1 ? "min-[1600px]:mt-10":""}`}
                     >
                       <img
                         src={arrowBullet}
@@ -136,19 +134,18 @@ export default function VisionMission() {
                       />
                       <span>{item.text}</span>
                     </div>
-                    
                   ))}
                 </div>
               </div>
             </div>
 
             {/* RIGHT IMAGE SECTION */}
-            <div className=" w-full p-6 h-max rounded-lg text-white flex flex-col justify-start items-end">
+            <div className="w-full h-full rounded-lg text-white flex flex-col justify-start items-end">
               {/* Framed photo */}
               <img
                 src={Journey01}
                 alt="Construction collage"
-                className="w-full h-[500px] object-cover rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl"
               />
             </div>
           </div>

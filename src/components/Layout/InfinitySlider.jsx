@@ -17,20 +17,26 @@ import Client09 from "../../assets/clients/Logos-09.jpg";
 import Client10 from "../../assets/clients/Logos-10.jpg";
 import Client11 from "../../assets/clients/Logos-11.jpg";
 import Client12 from "../../assets/clients/Logos-12.jpg";
+import Client13 from "../../assets/clients/Logos-13.jpg";
+import Client14 from "../../assets/clients/Logos-14.jpg";
+import Client15 from "../../assets/clients/Logos-15.jpg";
 
 const ClientImages = [
   Client01,
   Client02,
   Client03,
   Client04,
-  Client05
-  // Client06,
-  // Client07,
-  // Client08,
-  // Client09,
-  // Client10,
-  // Client11,
-  // Client12
+  Client05,
+  Client06,
+  Client07,
+  Client08,
+  Client09,
+  Client10,
+  Client11,
+  Client12,
+  Client13,
+  Client14,
+  Client15
 ];
 
 const InfinitySlider = () => (
