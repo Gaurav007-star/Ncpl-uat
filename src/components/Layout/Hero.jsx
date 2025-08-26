@@ -1,107 +1,76 @@
 import React from "react";
 import { motion } from "framer-motion";
 import construct01 from "../../assets/construct01.jpg";
-import construct02 from "../../assets/construct03.jpg";
 import Button from "../ui/userCreate/Button";
+import ArrowButton from "../ui/userCreate/ArrowButton";
+import { SpinningText } from "../magicui/spinning-text";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* vertical divider like the mock */}
-      <span className="pointer-events-none absolute inset-y-10 left-1/2 hidden md:block w-px bg-neutral-200/80" />
-
-      <div className=" px-[10vw] pt-10 ">
-        {/* top row */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 items-start gap-10">
-          {/* Left: headline + button */}
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <motion.h1
-              className="text-4xl md:text-6xl font-extrabold font-clash text-primary leading-[1.05] tracking-wider"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-            >
-              EXPERT <br />
-              CONSTRUCTION <br />
-              SERVICES FOR <br />
-              EVERY PROJECT
-            </motion.h1>
-
-            <motion.button
-              className="mt-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              whileHover={{ scale: 1.1 }}
-            >
-              <Button btn_name="Services" route={"/service"}/>
-            </motion.button>
-          </motion.div>
-
-          {/* Right: top image */}
-          <motion.div
-            className="md:pl-10"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <div className="overflow-hidden rounded-xl shadow-sm ring-1 ring-black/5">
-              <motion.img
-                src={construct01}
-                alt="high-rise construction with cranes"
-                className="block h-64 md:h-80 w-full object-cover filter grayscale hover:grayscale-0 cursor-pointer duration-500"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.1, ease: "easeInOut" }}
-              />
-            </div>
-          </motion.div>
-
-          {/* circle arrow badge over the seam */}
-          <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 hidden md:flex">
-            <motion.div
-              className="flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-xl ring-1 ring-black/5"
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
-              viewport={{ once: true, amount: 0.4 }}
-            >
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="h-7 w-7 text-primary"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M7 17L17 7M9 7h8v8" />
-              </svg>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* bottom image spanning both columns */}
+      <div className="px-[10vw]">
         <motion.div
-          className="mt-12"
+          className="relative mt-5"
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <div className="overflow-hidden rounded-xl shadow-sm ring-1 ring-black/5">
+          <div className="relative overflow-hidden rounded-xl ">
+            {/* Background Image */}
             <motion.img
-              src={construct02}
+              src={construct01}
               alt="workers on site"
-              className="block h-[360px] md:h-[460px] w-full object-cover object-top filter grayscale hover:grayscale-0 cursor-pointer duration-500"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.1, ease: "easeInOut" }}
+              className="block h-[360px] md:h-[700px] w-full object-cover object-top"
             />
+
+            <div className="absolute bottom-0 flex items-center justify-center w-[200px] h-[200px]">
+              {/* Spinning circular text */}
+              <SpinningText
+                className="text-[20px] tracking-wider text-white z-[500]"
+                duration={12}
+                radius={8}
+              >
+                Safety First • Quality Always • Success Together •
+              </SpinningText>
+
+              {/* Arrow in the center */}
+              <div className="absolute z-[500] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <ArrowButton route="/about" title="About Us" />
+              </div>
+            </div>
+
+            {/* Bottom Overlay Section */}
+            <div className="absolute bottom-0 left-0 flex flex-col font-plein items-end w-full p-6 md:p-10 text-white  rounded-b-xl bg-gradient-to-t from-black/60 via-black/50 to-transparent">
+              {/* Headline */}
+              <section className="flex flex-col items-end text-3xl md:text-[120px] font-medium font-clash mb-15 h-max w-full pl-2 leading-[80%] ">
+                <h1>We build,</h1>
+                <h2 className="text-[160px] flex items-center  ">
+                  You grow
+                </h2>
+              </section>
+
+              {/* Description */}
+              <p className="w-[70%] text-sm md:text-base text-gray-200 mb-2 text-right">
+                Under the guidance of our expert team, we help you build strong
+                foundations while you focus on growing your business. Together,
+                we optimize resources, create opportunities, and scale with
+                confidence.
+              </p>
+
+              {/* Tag pills */}
+              <div className="flex flex-wrap gap-2 mt-5">
+                <span className="px-4 py-1 rounded-full bg-white/20 text-sm backdrop-blur-sm">
+                  Construction
+                </span>
+                <span className="px-4 py-1 rounded-full bg-white/20 text-sm backdrop-blur-sm">
+                  Project Execution
+                </span>
+                <span className="px-4 py-1 rounded-full bg-white/20 text-sm backdrop-blur-sm">
+                  Development
+                </span>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

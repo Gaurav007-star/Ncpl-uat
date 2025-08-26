@@ -5,6 +5,7 @@ import ServiceSection from "../Layout/ServiceSection";
 import CtaSection from "../Layout/CtaSection";
 import Footer from "../Layout/Footer";
 import ServicesTopImage from "../../assets/services.jpg";
+import ParallaxCards from "../Layout/ParallaxCards";
 
 
 const Service = () => {
@@ -26,7 +27,7 @@ const Service = () => {
       />
 
       <ServiceSection />
-
+      <ParallaxCards/>
       <CtaSection />
       <Footer />
     </div>

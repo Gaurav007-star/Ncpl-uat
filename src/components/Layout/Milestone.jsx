@@ -30,17 +30,6 @@ const Milestone = () => {
 
   return (
     <div className="px-[10vw] py-16 overflow-hidden">
-      {/* Top small heading */}
-      <motion.h1
-        variants={fadeLeft}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="w-full text-[20px] font-clash text-primary text-center mb-10"
-      >
-        Achievements
-      </motion.h1>
-
       {/* Top Section: Two Columns */}
       <div className="grid md:grid-cols-2 gap-15 mb-15 items-start">
         {/* Left Column */}
@@ -50,8 +39,8 @@ const Milestone = () => {
           whileInView="show"
           viewport={{ once: true }}
         >
-          <h2 className="font-clash text-primary font-bold leading-tight text-[60px]">
-            Our Impressive <br /> Milestones and Achievements
+          <h2 className="font-clash text-primary font-semibold leading-[100%] text-[80px]">
+            Milestones and Achievements
           </h2>
         </motion.div>
 
@@ -129,26 +118,6 @@ const Milestone = () => {
           </motion.div>
         </motion.div>
       </div>
-
-
-{/* BOTTOM IMAGE SECTION */}
-      <motion.div
-        className="mt-12"
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <div className="overflow-hidden rounded-xl shadow-sm ring-1 ring-black/5">
-          <motion.img
-            src={MilestoneBanner}
-            alt="workers on site"
-            className="block h-[360px] md:h-[500px] w-full object-cover object-top filter grayscale hover:grayscale-0 cursor-pointer duration-500"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.1, ease: "easeInOut" }}
-          />
-        </div>
-      </motion.div>
     </div>
   );
 };

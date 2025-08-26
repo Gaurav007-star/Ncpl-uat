@@ -1,24 +1,24 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-const Button = ({btn_name,route}) => {
-
+const Button = ({ btn_name, route, outlineColor = "primary" }) => {
   const navigate = useNavigate();
+
+  const CustomCss = `relative inline-block px-6 py-1 gap-2 leading-10 
+          cursor-pointer overflow-hidden 
+          border-2 border-${outlineColor} rounded-md 
+          text-${outlineColor} 
+          z-[1] transition-colors duration-500 
+          group-hover:text-white hover:outline-none
+  `;
 
   return (
     <div className="inline-block group">
       <button
-        className="
-          relative inline-block px-6 py-1 gap-2 leading-10 
-          cursor-pointer overflow-hidden 
-          border-2 border-primary rounded-md 
-          text-primary 
-          z-[1] transition-colors duration-500 
-          group-hover:text-white
-        "
-        onClick={()=>navigate(route)}
+        className={CustomCss}
+        onClick={() => navigate(route)}
       >
-      {btn_name} <span aria-hidden>→</span>
+        {btn_name} <span aria-hidden>→</span>
         <span
           className="
             absolute w-[200px] h-[150px] rounded-full bg-primary -z-10

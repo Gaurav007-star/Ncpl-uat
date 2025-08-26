@@ -40,22 +40,31 @@ const ClientImages = [
 ];
 
 const InfinitySlider = () => (
-  <div className="flex py-5 items-center justify-center">
-    <Marquee>
-      <MarqueeFade side="left" />
-      <MarqueeFade side="right" />
-      <MarqueeContent>
-        {ClientImages.map((item, index) => (
-          <MarqueeItem className="h-auto w-auto" key={index}>
-            <img
-              alt={`Placeholder ${index}`}
-              className="overflow-hidden object-contain rounded-full"
-              src={item}
-            />
-          </MarqueeItem>
-        ))}
-      </MarqueeContent>
-    </Marquee>
+  <div className="w-full px-[10vw] pb-16">
+    {/* Header */}
+    <div className="mb-12 text-left">
+      <h2 className="text-[80px] font-bold text-primary">Esteemed Clients</h2>
+      <p className="mt-2 text-gray-600 w-[50%] text-left">
+        We&apos;re honored to have partnered with these reputable organizations
+        on impactful architectural projects through the decades.
+      </p>
+    </div>
+
+    {/* Grid of Clients */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      {ClientImages.map((client, index) => (
+        <div
+          key={index}
+          className="flex items-center justify-center rounded-2xl hover:shadow-md transition"
+        >
+          <img
+            src={client}
+            alt="clients"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      ))}
+    </div>
   </div>
 );
 export default InfinitySlider;

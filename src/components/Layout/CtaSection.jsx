@@ -1,4 +1,9 @@
+import {useNavigate} from "react-router";
+
 export default function CtaSection() {
+
+  const navigate = useNavigate();
+
   return (
     <section className="px-[10vw] mb-16 text-white">
       <div className="w-full px-10 py-20 rounded-2xl text-center space-y-6 bg-primary ">
@@ -15,8 +20,8 @@ export default function CtaSection() {
 
         {/* Button */}
         <div>
-          <button className="bg-white text-primary font-semibold text-lg px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-transform hover:-translate-y-1 cursor-pointer">
-            Get a Free Quote
+          <button className="bg-white text-primary font-semibold text-lg px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-transform hover:-translate-y-1 cursor-pointer" onClick={()=>navigate("/contact")}>
+            Contact Us
           </button>
         </div>
       </div>

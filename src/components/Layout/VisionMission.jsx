@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import OurStory from "../../assets/OurStory.jpg";
 import Journey01 from "../../assets/journey01.jpg";
-import arrowBullet from "../../assets/arrow_13476014.svg";
+import arrowBullet from "../../assets/journeyBullet.svg";
 import Button from "../ui/userCreate/Button";
 
 const journeyPoints = [
@@ -58,7 +58,7 @@ export default function VisionMission() {
             Our Vision
           </h2>
           <p className="text-lg leading-relaxed text-secondary">
-            To be a part of India's journey in becoming a global manufacturing
+            To be a part of India's journey in <br/>becoming a global manufacturing
             hub.
           </p>
         </motion.div>

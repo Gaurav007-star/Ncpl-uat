@@ -65,7 +65,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="nav-bar w-full h-max flex items-center justify-between px-[10vw] font-clash font-medium text-primary py-5">
+    <div className="nav-bar sticky top-0 z-[1000] bg-white w-full h-max flex items-center justify-between px-[10vw] font-clash font-medium text-primary py-5">
       {/* left-side */}
       <div className="left-side flex items-center gap-2">
         <img
@@ -77,7 +77,7 @@ const Navbar = () => {
       </div>
 
       {/* right-side */}
-      <div className="right-side flex items-center gap-8">
+      <div className="right-side font-plein flex items-center gap-8">
         {links.map((item, i) => (
           <Link
             key={i}

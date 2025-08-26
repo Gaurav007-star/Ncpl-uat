@@ -27,7 +27,7 @@ const Project = () => {
       {/* Time line */}
       <div className="timeline-section h-max flex flex-col px-[10vw] mb-30">
         <h1 className="w-full h-max font-clash font-extrabold text-[80px] text-center text-primary mb-4">
-          Major Projects
+          Major Projects Timeline
         </h1>
         <img src={TimelineImage} alt="" />
       </div>

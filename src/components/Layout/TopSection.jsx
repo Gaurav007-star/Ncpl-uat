@@ -8,10 +8,10 @@ const TopSection = ({ title, description, img }) => {
       <div className="left-section relative w-[50%] max-[1025px]:w-full h-full bg-primary text-white flex flex-col justify-center max-[1025px]:rounded-t-2xl min-[1025px]:rounded-l-2xl pl-15 overflow-hidden max-[1025px]:h-[400px]">
         {/* Heading with half underline */}
         <div className="relative mb-10 ">
-          <h1 className="font-clash text-[80px] font-extrabold leading-none">
+          <h1 className="font-clash text-[80px] font-semibold leading-none">
             {title}
           </h1>
-          <div className="absolute bottom-[-10px] left-0 w-70 h-[2px] bg-white rounded-full"></div>
+          <div className="absolute bottom-[-10px] left-0 w-40 h-[2px] bg-white rounded-full"></div>
         </div>
 
         {/* Small description with modern offset */}

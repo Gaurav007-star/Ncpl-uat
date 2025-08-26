@@ -1,65 +1,57 @@
 import React from "react";
 import { motion } from "framer-motion";
-import IndustrialCivil from "../../assets/services/Industrial Civil Construction.jpg";
-import Turnkey from "../../assets/services/Turnkey Project Execution.jpg";
-import RoadInfra from "../../assets/services/Road Infrastructure.jpg";
-import SiteDevelopment from "../../assets/services/Site Development & Infrastructure.jpg";
-import preEngineer from "../../assets/services/Pre-Engineered Buildings (PEB).jpg";
-import ExternalDevelopment from "../../assets/services/External Development & Finishing.jpg";
-import Renovation from "../../assets/services/Renovation & Expansion Projects.jpg";
-import ProjectManagement from "../../assets/services/Project Management & Consulting.jpg";
 
 // Services Data (all with images now)
-const services = [
-  {
-    title: "Industrial Civil Construction",
-    description:
-      "Designing and building infrastructure such as roads, bridges, buildings, and water systems with durability and precision.",
-    image: IndustrialCivil
-  },
-  {
-    title: "Turnkey Project Execution",
-    description:
-      "End-to-end solutions, from design to delivery, ensuring seamless, timely, and high-quality results.",
-    image: Turnkey
-  },
-  {
-    title: "Road Infrastructure",
-    description:
-      "Delivering robust road infrastructure from planning to construction for safe, sustainable, and efficient networks.",
-    image: RoadInfra
-  },
-  {
-    title: "Site Development & Infrastructure",
-    description:
-      "Preparing land with utilities, drainage, and access to ensure efficient and safe construction readiness.",
-    image: SiteDevelopment
-  },
-  {
-    title: "Pre-Engineered Buildings (PEB)",
-    description:
-      "Fast, durable, and cost-effective steel structures ideal for warehouses, factories, and more.",
-    image: preEngineer
-  },
-  {
-    title: "External Development & Finishing",
-    description:
-      "Crafting landscapes, facades, and green spaces that enhance both functionality and aesthetics.",
-    image: ExternalDevelopment
-  },
-  {
-    title: "Renovation & Expansion Projects",
-    description:
-      "Transforming existing structures with smart renovations and strategic expansions for better utility and longevity.",
-    image: Renovation
-  },
-  {
-    title: "Project Management & Consulting",
-    description:
-      "Managing projects from planning to onsite coordination with cost control and seamless execution.",
-    image: ProjectManagement
-  }
-];
+// const services = [
+//   {
+//     title: "Industrial Civil Construction",
+//     description:
+//       "Designing and building infrastructure such as roads, bridges, buildings, and water systems with durability and precision.",
+//     image: IndustrialCivil
+//   },
+//   {
+//     title: "Turnkey Project Execution",
+//     description:
+//       "End-to-end solutions, from design to delivery, ensuring seamless, timely, and high-quality results.",
+//     image: Turnkey
+//   },
+//   {
+//     title: "Road Infrastructure",
+//     description:
+//       "Delivering robust road infrastructure from planning to construction for safe, sustainable, and efficient networks.",
+//     image: RoadInfra
+//   },
+//   {
+//     title: "Site Development & Infrastructure",
+//     description:
+//       "Preparing land with utilities, drainage, and access to ensure efficient and safe construction readiness.",
+//     image: SiteDevelopment
+//   },
+//   {
+//     title: "Pre-Engineered Buildings (PEB)",
+//     description:
+//       "Fast, durable, and cost-effective steel structures ideal for warehouses, factories, and more.",
+//     image: preEngineer
+//   },
+//   {
+//     title: "External Development & Finishing",
+//     description:
+//       "Crafting landscapes, facades, and green spaces that enhance both functionality and aesthetics.",
+//     image: ExternalDevelopment
+//   },
+//   {
+//     title: "Renovation & Expansion Projects",
+//     description:
+//       "Transforming existing structures with smart renovations and strategic expansions for better utility and longevity.",
+//     image: Renovation
+//   },
+//   {
+//     title: "Project Management & Consulting",
+//     description:
+//       "Managing projects from planning to onsite coordination with cost control and seamless execution.",
+//     image: ProjectManagement
+//   }
+// ];
 
 // Variants
 const containerVariants = {
@@ -74,7 +66,7 @@ const cardVariants = {
 
 export default function ServiceSection() {
   return (
-    <section className="px-[10vw] py-20 bg-white ">
+    <section className="px-[10vw] pt-10 bg-white ">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -96,7 +88,7 @@ export default function ServiceSection() {
       </motion.div>
 
       {/* Services Grid */}
-      <motion.div
+      {/* <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -112,7 +104,6 @@ export default function ServiceSection() {
             className="overflow-hidden rounded-2xl ring-1 ring-gray-200 bg-white flex flex-col w-full h-[500px] cursor-pointer shadow-md hover:shadow-2xl hover:ring-primary/50 transition-all duration-500"
           >
             <div className="relative w-full h-full overflow-hidden">
-              {/* Image with zoom effect */}
               <motion.img
                 src={service.image}
                 alt={service.title}
@@ -124,7 +115,6 @@ export default function ServiceSection() {
                 transition={{ duration: 0.5, ease: "easeOut" }}
               />
 
-              {/* Gradient Overlay */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-t from-black to-black/50 flex items-end"
                 variants={{
@@ -147,7 +137,7 @@ export default function ServiceSection() {
             </div>
           </motion.div>
         ))}
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

@@ -4,8 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-plein: "Plein", sans-serif;
-  --font-clash: "Clash Display", sans-serif;
+  --font-plein: "Satoshi", sans-serif;
+  --font-clash: "Author", serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
