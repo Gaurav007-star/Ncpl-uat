@@ -54,7 +54,7 @@ export default function VisionMission() {
           viewport={{ once: true }}
           className="w-[40%]"
         >
-          <h2 className="text-[40px] font-clash font-extrabold text-primary">
+          <h2 className="text-[50px] font-clash font-light text-primary">
             Our Vision
           </h2>
           <p className="text-lg leading-relaxed text-secondary">
@@ -96,7 +96,7 @@ export default function VisionMission() {
           viewport={{ once: true }}
           className="w-[40%]"
         >
-          <h2 className="text-[40px] font-clash font-extrabold text-primary">
+          <h2 className="text-[50px] font-clash font-light text-primary">
             Our Mission
           </h2>
           <p className="text-lg leading-relaxed text-secondary">
@@ -114,7 +114,7 @@ export default function VisionMission() {
             <div className="py-10 rounded-2xl flex justify-center md:justify-start">
               <div className="w-full h-max">
                 <div className="overflow-hidden ">
-                  <h2 className="text-white font-clash font-extrabold text-[80px] leading-[100%] tracking-wider">
+                  <h2 className="text-white font-clash font-light text-[80px] leading-[100%] tracking-wider">
                     Our Story
                   </h2>
                   {/* <div className="mt-3 w-[70%] h-1 bg-white"></div> */}
@@ -125,7 +125,7 @@ export default function VisionMission() {
                   {journeyPoints.map((item) => (
                     <div
                       key={item.id}
-                      className={`w-full flex items-start gap-2 ${item.id == 1 ? "min-[1600px]:mt-10":""}`}
+                      className={`w-full flex items-start font-clash gap-2 ${item.id == 1 ? "min-[1600px]:mt-10":""}`}
                     >
                       <img
                         src={arrowBullet}

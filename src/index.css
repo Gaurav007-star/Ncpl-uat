@@ -2,7 +2,9 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-
+@plugin "daisyui" {
+  themes: light --default;
+}
 @theme inline {
   --font-plein: "Satoshi", sans-serif;
   --font-clash: "Author", serif;

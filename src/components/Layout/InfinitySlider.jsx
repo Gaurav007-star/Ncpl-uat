@@ -20,31 +20,43 @@ import Client12 from "../../assets/clients/Logos-12.jpg";
 import Client13 from "../../assets/clients/Logos-13.jpg";
 import Client14 from "../../assets/clients/Logos-14.jpg";
 import Client15 from "../../assets/clients/Logos-15.jpg";
+import Client16 from "../../assets/clients/Logos-16.jpg";
+import Client17 from "../../assets/clients/Logos-17.jpg";
+import Client18 from "../../assets/clients/Logos-18.jpg";
+import Client19 from "../../assets/clients/Logos-19.jpg";
+import Client20 from "../../assets/clients/Logos-20.jpg";
+import Client21 from "../../assets/clients/Logos-21.jpg";
+import Client22 from "../../assets/clients/Logos-22.jpg";
+import Client23 from "../../assets/clients/Logos-23.jpg";
+import Client24 from "../../assets/clients/Logos-24.jpg";
+import Client25 from "../../assets/clients/Logos-25.jpg";
+import Client26 from "../../assets/clients/Logos-26.jpg";
+import Client27 from "../../assets/clients/Logos-27.jpg";
+import Client28 from "../../assets/clients/Logos-28.jpg";
+import Client29 from "../../assets/clients/Logos-29.jpg";
+import Client30 from "../../assets/clients/Logos-30.jpg";
+import Client31 from "../../assets/clients/Logos-31.jpg";
+import Client32 from "../../assets/clients/Logos-32.jpg";
+import Client33 from "../../assets/clients/Logos-33.jpg";
+import Client34 from "../../assets/clients/Logos-34.jpg";
+import Client35 from "../../assets/clients/Logos-35.jpg";
 
 const ClientImages = [
-  Client01,
-  Client02,
-  Client03,
-  Client04,
-  Client05,
-  Client06,
-  Client07,
-  Client08,
-  Client09,
-  Client10,
-  Client11,
-  Client12,
-  Client13,
-  Client14,
-  Client15
+  Client01, Client02, Client03, Client04, Client05,
+  Client06, Client07, Client08, Client09, Client10,
+  Client11, Client12, Client13, Client14, Client15,
+  Client16, Client17, Client18, Client19, Client20,
+  Client21, Client22, Client23, Client24, Client25,
+  Client26, Client27, Client28, Client29, Client30,
+  Client31, Client32, Client33, Client34, Client35
 ];
 
 const InfinitySlider = () => (
   <div className="w-full px-[10vw] pb-16">
     {/* Header */}
-    <div className="mb-12 text-left">
-      <h2 className="text-[80px] font-light text-primary">Esteemed Clients</h2>
-      <p className="mt-2 text-gray-600 w-[50%] text-left">
+    <div className="mb-12 w-full flex flex-col items-center justify-center">
+      <h2 className="text-[50px] font-light text-primary">Esteemed Clients</h2>
+      <p className="mt-2 text-gray-600 w-[70%] text-center">
         We&apos;re honored to have partnered with these reputable organizations
         on impactful architectural projects through the decades.
       </p>
@@ -55,16 +67,17 @@ const InfinitySlider = () => (
       {ClientImages.map((client, index) => (
         <div
           key={index}
-          className="flex items-center justify-center rounded-2xl hover:shadow-md transition"
+          className="flex items-center justify-center rounded-2xl transition"
         >
           <img
             src={client}
-            alt="clients"
-            className="w-full h-auto object-contain"
+            alt={`client-${index + 1}`}
+            className="w-full h-[100px] object-contain"
           />
         </div>
       ))}
     </div>
   </div>
 );
+
 export default InfinitySlider;

@@ -30,29 +30,55 @@ const Home = () => {
       <InfinitySlider />
       <VisionMission />
       <ServiceSection />
-      <section className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 pb-16 px-[10vw] mt-10">
-        {/* Left Content */}
-        <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl font-semibold font-clash text-primary w-[80%]">
-            Expert Construction Services
-          </h1>
-          <p className="text-lg text-gray-600 font-Plein max-w-lg">
-            We provide high-quality construction solutions for residential,
-            commercial, and industrial projects. Our team ensures durability,
-            precision, and modern design tailored to your needs.
-          </p>
-          <Button btn_name={"Services"} route={"/service"}/>
-        </div>
 
-        {/* Right Image */}
-        <div className="flex justify-center">
-          <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-            alt="Construction site"
-            className="rounded-2xl shadow-lg object-cover w-full h-[400px] md:h-[500px]"
-          />
-        </div>
-      </section>
+      {/* service section */}
+<section className="relative grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-[10vw] py-16">
+  {/* Left Content */}
+  <div className="space-y-6">
+    <h1 className="text-4xl md:text-5xl font-extrabold text-black leading-tight">
+      EXPERT <br /> CONSTRUCTION <br /> SERVICES FOR <br /> EVERY PROJECT
+    </h1>
+    <button className="bg-black text-white px-6 py-3 rounded-md flex items-center gap-2 hover:bg-gray-900 transition">
+      All Projects
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+           strokeWidth="2" stroke="currentColor" className="w-5 h-5">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
+
+  {/* Right Image */}
+  <div className="flex justify-center relative">
+    <img
+      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      alt="Construction site"
+      className="rounded-lg object-cover w-full h-[400px] md:h-[500px]"
+    />
+  </div>
+
+  {/* Vertical Divider + Circle Arrow */}
+  <div className="hidden md:flex absolute top-0 bottom-0 left-1/2 -translate-x-1/2 items-center">
+    {/* Divider line */}
+    <div className="w-px bg-gray-300 h-[80%]"></div>
+    {/* Circle with Arrow */}
+    <div className="absolute left-1/2 transform -translate-x-1/2">
+      <div className="w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+             strokeWidth="2.5" stroke="currentColor"
+             strokeLinecap="round" strokeLinejoin="round"
+             className="w-7 h-7 text-black">
+          <line x1="7" y1="17" x2="17" y2="7" />
+          <polyline points="7 7 17 7 17 17" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
       <CtaSection />
       <Footer />
     </div>

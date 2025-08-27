@@ -94,6 +94,8 @@ export default function ParallaxCards() {
             range={[index * 0.25, 1]}
             targetScale={targetScale}
             progress={scrollYProgress}
+            width={"60vw"}
+            height={"400px"}
           />
         );
       })}
