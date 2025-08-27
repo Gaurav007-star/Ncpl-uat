@@ -31,7 +31,7 @@ const Milestone = () => {
   return (
     <div className="px-[10vw] py-16 overflow-hidden">
       {/* Top Section: Two Columns */}
-      <div className="grid md:grid-cols-2 gap-15 mb-15 items-start">
+      <div className="grid md:grid-cols-2 gap-15 items-start">
         {/* Left Column */}
         <motion.div
           variants={fadeLeft}
@@ -39,7 +39,7 @@ const Milestone = () => {
           whileInView="show"
           viewport={{ once: true }}
         >
-          <h2 className="font-clash text-primary font-semibold leading-[100%] text-[80px]">
+          <h2 className="font-clash text-primary font-light leading-[100%] text-[80px]">
             Milestones and Achievements
           </h2>
         </motion.div>

@@ -66,7 +66,7 @@ const cardVariants = {
 
 export default function ServiceSection() {
   return (
-    <section className="px-[10vw] pt-10 bg-white ">
+    <section className="px-[10vw] bg-white ">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}

@@ -8,22 +8,22 @@ export default function Founder() {
       <div className="flex flex-col lg:flex-row items-start lg:items-start gap-8">
         {/* Left Side: First Half of Story */}
         <div className="flex flex-col items-start h-max w-full lg:w-[75%]">
-          <motion.h2
+          <motion.h3
             initial={{ opacity: 0, y: -40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="font-clash w-[90%] text-primary text-3xl md:text-4xl font-extrabold leading-snug mb-5"
+            className="font-clash w-full text-primary text-3xl md:text-[55px] font-medium leading-snug mb-5"
           >
             THE INSPIRING JOURNEY OF OUR FOUNDER: A TIMELINE OF SUCCESS
-          </motion.h2>
+          </motion.h3>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
-            className="font-plein text-secondary text-[18px] leading-10"
+            className="font-plein text-secondary text-[18px] leading-relaxed"
           >
             <p>
               Born and raised in a small village in Uttar Pradesh, our founder’s
@@ -58,7 +58,7 @@ export default function Founder() {
           <img
             src={FounderImage}
             alt="Founder"
-            className="h-[400px] w-full object-cover rounded-lg shadow-lg"
+            className="h-auto w-full object-cover rounded-lg shadow-lg"
           />
         </motion.div>
       </div>
@@ -70,7 +70,7 @@ export default function Founder() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           viewport={{ once: true }}
-          className="font-plein flex flex-col items-start justify-center text-[18px] text-secondary text-left leading-10"
+          className="font-plein flex flex-col items-start justify-center text-[18px] text-secondary text-left leading-relaxed"
         >
           <p>
             From a scrappy, street-smart kid to an academic who authored a book,

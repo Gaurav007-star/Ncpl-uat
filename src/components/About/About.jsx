@@ -29,11 +29,11 @@ const About = () => {
       />
 
       {/* Bottom-section */}
-      <div className="w-full py-20 px-[10vw]">
+      <div className="w-full px-[10vw]">
         <div className="w-full mx-auto flex flex-col gap-2">
           {/* Left Small Section Title */}
           <div className="flex-shrink-0">
-            <h3 className="tracking-wide text-primary font-clash text-[80px] relative">
+            <h3 className="tracking-wide text-primary font-clash font-medium text-[80px] relative">
               Company Profile
             </h3>
           </div>

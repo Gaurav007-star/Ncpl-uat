@@ -82,7 +82,7 @@ export default function ParallaxCards() {
   return (
     <div
       ref={rootContainer}
-      className="h-max w-full mt-5 mb-30"
+      className="h-max w-full mb-30"
     >
       {services.map((card, index) => {
         const targetScale = 1 - (services.length - index) * 0.05;

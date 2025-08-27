@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../Layout/Navbar";
 import Hero from "../Layout/Hero";
 import Service from "../Layout/ServiceSection";
@@ -14,6 +14,14 @@ import ProjectSection from "../Layout/ProjectSection";
 import Button from "../ui/userCreate/Button";
 
 const Home = () => {
+
+  useEffect(()=>{
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    })
+  },[]);
+  
   return (
     <div className="w-full h-max">
       <Navbar />
@@ -22,10 +30,10 @@ const Home = () => {
       <InfinitySlider />
       <VisionMission />
       <ServiceSection />
-      <section className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 p-8 px-[10vw] mt-10">
+      <section className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 pb-16 px-[10vw] mt-10">
         {/* Left Content */}
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold font-clash text-primary">
+          <h1 className="text-4xl md:text-5xl font-semibold font-clash text-primary w-[80%]">
             Expert Construction Services
           </h1>
           <p className="text-lg text-gray-600 font-Plein max-w-lg">
@@ -45,8 +53,6 @@ const Home = () => {
           />
         </div>
       </section>
-      {/* <ProjectSection /> */}
-      {/* <Founder /> */}
       <CtaSection />
       <Footer />
     </div>

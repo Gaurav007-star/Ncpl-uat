@@ -42,7 +42,7 @@ export default function VisionMission() {
   return (
     <section
       ref={sectionRef}
-      className="w-full pb-20 pt-10  text-black space-y-20 overflow-hidden"
+      className="w-full pb-16 text-black space-y-16 overflow-hidden"
     >
       {/* Row 1: Vision + Image */}
       <div className="flex items-center gap-12 px-[10vw]">

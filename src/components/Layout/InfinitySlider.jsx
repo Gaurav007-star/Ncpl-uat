@@ -43,7 +43,7 @@ const InfinitySlider = () => (
   <div className="w-full px-[10vw] pb-16">
     {/* Header */}
     <div className="mb-12 text-left">
-      <h2 className="text-[80px] font-bold text-primary">Esteemed Clients</h2>
+      <h2 className="text-[80px] font-light text-primary">Esteemed Clients</h2>
       <p className="mt-2 text-gray-600 w-[50%] text-left">
         We&apos;re honored to have partnered with these reputable organizations
         on impactful architectural projects through the decades.
