@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/ncpl-logo.png";
 import { Link, useNavigate } from "react-router";
-
+import { CgMenuRightAlt } from "react-icons/cg";
 const links = [
   {
     id: "home",
@@ -61,11 +61,35 @@ const links = [
 ];
 
 const Navbar = () => {
-  const [selectLink, setSelectLink] = useState("");
+  const [isInService, setIsInService] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const target =
+      document.getElementById("parallax-card-section") ||
+      document.getElementById("project-scroll-section");
+    if (!target) return; // if element doesn't exist, skip
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInService(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(target);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <div className="nav-bar sticky top-0 z-[1000] bg-white w-full h-max flex items-center justify-between px-[10vw] font-clash font-medium text-primary py-5">
+    <div
+      className={`nav-bar ${
+        isInService ? "block" : "sticky"
+      } top-0 z-[1000] bg-white w-full h-max flex items-top max-[1025px]:items-center justify-between px-[10vw] font-clash font-medium text-primary py-5  max-[450px]:px-5`}
+    >
       {/* left-side */}
       <div className="left-side flex items-center gap-2">
         <img
@@ -77,18 +101,49 @@ const Navbar = () => {
       </div>
 
       {/* right-side */}
-      <div className="right-side font-plein flex items-center gap-8">
+      <div className="right-side max-[1025px]:hidden font-plein flex items-center mt-2 h-full gap-8">
         {links.map((item, i) => (
           <Link
             key={i}
             to={item.route}
-            onMouseEnter={() => setSelectLink(item.id)}
-            onMouseLeave={() => setSelectLink("")}
+            // onMouseEnter={() => setSelectLink(item.id)}
+            // onMouseLeave={() => setSelectLink("")}
             className="text-[20px] hover:scale-105 hover:text-black transition-transform duration-200"
           >
             {item.title}
           </Link>
         ))}
+      </div>
+
+      <div className="drawer min-[1025px]:hidden w-max">
+        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+        <div className="drawer-content">
+          {/* Page content here */}
+          <label htmlFor="my-drawer">
+            <CgMenuRightAlt className="w-10 h-10" />
+          </label>
+        </div>
+        <div className="drawer-side">
+          <label
+            htmlFor="my-drawer"
+            aria-label="close sidebar"
+            className="drawer-overlay"
+          ></label>
+          <ul className="menu bg-primary text-base-content min-h-full w-80 p-4">
+            {/* Sidebar content here */}
+            {links.map((item, i) => (
+              <Link
+                key={i}
+                to={item.route}
+                // onMouseEnter={() => setSelectLink(item.id)}
+                // onMouseLeave={() => setSelectLink("")}
+                className="text-[40px] hover:scale-105 text-white transition-transform duration-200"
+              >
+                {item.title}
+              </Link>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

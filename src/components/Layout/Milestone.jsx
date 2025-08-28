@@ -29,9 +29,9 @@ const Milestone = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="px-[10vw] py-16 overflow-hidden">
+    <div className="px-[10vw] max-[450px]:px-5 py-16 max-[450px]:pt-0 overflow-hidden">
       {/* Top Section: Two Columns */}
-      <div className="grid md:grid-cols-2 gap-15 items-start">
+      <div className="grid grid-cols-1 min-[1026px]:grid-cols-2 gap-15 max-[450px]:gap-5 items-start">
         {/* Left Column */}
         <motion.div
           variants={fadeLeft}
@@ -39,7 +39,7 @@ const Milestone = () => {
           whileInView="show"
           viewport={{ once: true }}
         >
-          <h2 className="font-clash text-primary font-light leading-[100%] text-[80px]">
+          <h2 className="font-clash text-primary font-light leading-[100%] text-[80px] max-[450px]:text-[50px]">
             Milestones and Achievements
           </h2>
         </motion.div>

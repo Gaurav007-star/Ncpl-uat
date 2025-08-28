@@ -5,7 +5,7 @@ export default function CtaSection() {
   const navigate = useNavigate();
 
   return (
-    <section className="px-[10vw] mb-16 text-white">
+    <section className="px-[10vw] max-[450px]:px-5 mb-16 text-white">
       <div className="w-full px-10 py-20 rounded-2xl text-center space-y-6 bg-primary ">
         {/* Headline */}
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">

@@ -42,17 +42,17 @@ export default function VisionMission() {
   return (
     <section
       ref={sectionRef}
-      className="w-full pb-16 text-black space-y-16 overflow-hidden"
+      className="w-full pb-16 max-[450px]:pb-10 text-black space-y-16 overflow-hidden"
     >
       {/* Row 1: Vision + Image */}
-      <div className="flex items-center gap-12 px-[10vw]">
+      <div className="flex max-[1025px]:flex-col items-center gap-12 max-[1025px]:gap-5 px-[10vw] max-[450px]:px-5">
         <motion.div
           style={{ opacity: fadeText }}
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="w-[40%]"
+          className="w-[40%] max-[1025px]:w-full"
         >
           <h2 className="text-[50px] font-clash font-light text-primary">
             Our Vision
@@ -67,7 +67,7 @@ export default function VisionMission() {
           src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1170&auto=format&fit=crop"
           alt="Vision"
           style={{ y: yImage }}
-          className="w-[60%] h-80 object-cover rounded-2xl shadow-xl"
+          className="w-[60%] max-[1025px]:w-full h-80 object-cover rounded-2xl shadow-xl"
           initial={{ scale: 1.05, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
@@ -76,12 +76,12 @@ export default function VisionMission() {
       </div>
 
       {/* Row 2: Image + Mission */}
-      <div className="flex gap-12 items-center px-[10vw]">
+      <div className="flex max-[1025px]:flex-col-reverse gap-12 max-[450px]:gap-10 items-center px-[10vw]  max-[450px]:px-5">
         <motion.img
           src="https://plus.unsplash.com/premium_photo-1663088543643-2a1ebfc830b6?q=80&w=1172&auto=format&fit=crop"
           alt="Mission"
           style={{ y: yImage }}
-          className="w-[60%] h-80 object-cover rounded-2xl shadow-xl"
+          className="w-[60%] max-[1025px]:w-full h-80 object-cover rounded-2xl shadow-xl"
           initial={{ scale: 1.05, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
@@ -94,7 +94,7 @@ export default function VisionMission() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
-          className="w-[40%]"
+          className="w-[40%] max-[1025px]:w-full"
         >
           <h2 className="text-[50px] font-clash font-light text-primary">
             Our Mission
@@ -107,21 +107,20 @@ export default function VisionMission() {
       </div>
 
       {/* JOURNEY */}
-      <section className="w-full  px-[10vw]">
-        <div className="w-full bg-primary shadow-[5px_5px_20px_#757687ab] p-15 rounded-2xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2">
+      <section className="w-full  px-[10vw]  max-[450px]:px-5">
+        <div className="w-full bg-primary  shadow-[5px_5px_20px_#757687ab] p-15 max-[450px]:p-5 rounded-2xl mx-auto">
+          <div className="grid grid-cols-1 min-[1025px]:grid-cols-2">
             {/* LEft SIDE */}
             <div className="py-10 rounded-2xl flex justify-center md:justify-start">
               <div className="w-full h-max">
                 <div className="overflow-hidden ">
-                  <h2 className="text-white font-clash font-light text-[80px] leading-[100%] tracking-wider">
+                  <h2 className="text-white font-clash font-light text-[80px] max-[450px]:text-[50px] leading-[100%] tracking-wider">
                     Our Story
                   </h2>
-                  {/* <div className="mt-3 w-[70%] h-1 bg-white"></div> */}
                 </div>
 
                 {/* SUB TOPICS */}
-                <div className="mt-6 text-[18px] leading-6 pr-20 text-white font-plein space-y-3 min-[1600px]:space-y-7 min-[1600px]:text-[24px]">
+                <div className="mt-6 text-[18px] leading-6 pr-20 max-[1025px]:pr-0 text-white font-plein space-y-3 min-[1600px]:space-y-7 min-[1600px]:text-[24px]">
                   {journeyPoints.map((item) => (
                     <div
                       key={item.id}

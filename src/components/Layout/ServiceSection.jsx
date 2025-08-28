@@ -66,7 +66,7 @@ const cardVariants = {
 
 export default function ServiceSection() {
   return (
-    <section className="px-[10vw] bg-white ">
+    <section className="px-[10vw] bg-white mt-20">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -75,10 +75,10 @@ export default function ServiceSection() {
         viewport={{ once: true }}
         className="text-center max-w-3xl mx-auto"
       >
-        <p className="uppercase text-sm font-semibold tracking-wider text-primary font-clash">
+        <p className="uppercase text-sm font-semibold tracking-wider text-primary font-plein">
           Our Services
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold mt-2 leading-snug text-primary font-clash">
+        <h2 className="text-4xl md:text-5xl font-light mt-2 leading-snug text-primary font-clash">
           What We Offer
         </h2>
         <p className="text-gray-600 text-lg font-plein">
@@ -86,58 +86,6 @@ export default function ServiceSection() {
           excellence across every aspect of civil and industrial projects.
         </p>
       </motion.div>
-
-      {/* Services Grid */}
-      {/* <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        className="grid grid-cols-3 max-[1025px]:grid-cols-2 max-[450px]:grid-cols-1 gap-8 mt-16"
-      >
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            variants={cardVariants}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            whileHover="hover"
-            className="overflow-hidden rounded-2xl ring-1 ring-gray-200 bg-white flex flex-col w-full h-[500px] cursor-pointer shadow-md hover:shadow-2xl hover:ring-primary/50 transition-all duration-500"
-          >
-            <div className="relative w-full h-full overflow-hidden">
-              <motion.img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-full object-cover"
-                variants={{
-                  hover: { scale: 1.1 },
-                  initial: { scale: 1 }
-                }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              />
-
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-t from-black to-black/50 flex items-end"
-                variants={{
-                  hover: {
-                    background:
-                      "linear-gradient(to top, black, rgba(0,0,0,.60),transparent)"
-                  }
-                }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-                <div className="p-6 text-white">
-                  <motion.h3 className="text-[22px] font-bold mb-1 font-clash">
-                    {service.title}
-                  </motion.h3>
-                  <motion.p className="text-[18px] text-gray-200 font-plein">
-                    {service.description}
-                  </motion.p>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div> */}
     </section>
   );
 }

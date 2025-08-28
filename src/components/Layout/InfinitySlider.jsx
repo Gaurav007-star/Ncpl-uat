@@ -40,6 +40,10 @@ import Client32 from "../../assets/clients/Logos-32.jpg";
 import Client33 from "../../assets/clients/Logos-33.jpg";
 import Client34 from "../../assets/clients/Logos-34.jpg";
 import Client35 from "../../assets/clients/Logos-35.jpg";
+import Client36 from "../../assets/clients/Logos-36.jpg";
+import Client37 from "../../assets/clients/Logos-37.jpg";
+
+
 
 const ClientImages = [
   Client01, Client02, Client03, Client04, Client05,
@@ -48,22 +52,22 @@ const ClientImages = [
   Client16, Client17, Client18, Client19, Client20,
   Client21, Client22, Client23, Client24, Client25,
   Client26, Client27, Client28, Client29, Client30,
-  Client31, Client32, Client33, Client34, Client35
+  Client31, Client32, Client33, Client34, Client35,Client36,Client37
 ];
 
 const InfinitySlider = () => (
-  <div className="w-full px-[10vw] pb-16">
+  <div className="w-full px-[10vw] max-[450px]:px-5 pb-16 max-[1025px]:pb-0 mt-20 max-[450px]:mt-10">
     {/* Header */}
     <div className="mb-12 w-full flex flex-col items-center justify-center">
-      <h2 className="text-[50px] font-light text-primary">Esteemed Clients</h2>
-      <p className="mt-2 text-gray-600 w-[70%] text-center">
+      <h2 className="text-[50px] max-[450px]:text-[40px] font-light text-primary">Esteemed Clients</h2>
+      <p className="mt-2 text-gray-600 w-[70%] max-[450px]:w-full text-center">
         We&apos;re honored to have partnered with these reputable organizations
         on impactful architectural projects through the decades.
       </p>
     </div>
 
     {/* Grid of Clients */}
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+    <div className="w-full flex flex-wrap justify-center gap-6">
       {ClientImages.map((client, index) => (
         <div
           key={index}
@@ -72,7 +76,7 @@ const InfinitySlider = () => (
           <img
             src={client}
             alt={`client-${index + 1}`}
-            className="w-full h-[100px] object-contain"
+            className="w-full h-[150px] object-contain"
           />
         </div>
       ))}

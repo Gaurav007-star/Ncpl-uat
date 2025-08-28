@@ -5,7 +5,6 @@ import Footer from "../Layout/Footer";
 import TopSection from "../Layout/TopSection";
 import AboutTopImage from "../../assets/About us.jpg";
 
-import FounderImage from "../../assets/founderImage.jpg";
 
 const About = () => {
   useEffect(()=>{

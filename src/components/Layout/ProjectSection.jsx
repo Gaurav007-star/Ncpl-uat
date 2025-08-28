@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import FallCelling from "../../assets/projects/fall celling.jpg";
-import ItbpDalmau from "../../assets/projects/ITBP Dalmau, Raebareli.jpg";
-import Quarter01 from "../../assets/projects/Quarter Quard Building, CRPF Camp, Amethi.jpg";
-import Quarter02 from "../../assets/projects/Quarter Quard Building, CRPF Camp, Amethi02.jpg";
+import Card from "./Card";
+import Nestle from "../../assets/clients/Logos-10.jpg";
+import Tata from "../../assets/clients/Logos-16.jpg";
+import Cpwd from "../../assets/clients/Logos-01.jpg";
+import Titan from "../../assets/clients/Logos-09.jpg";
+import Prakalpa from "../../assets/clients/Logos-38.png";
+import RightTight from "../../assets/clients/Logos-39.png";
 
 // Projects grouped by categories
 const projectCategories = {
@@ -12,33 +15,33 @@ const projectCategories = {
       title: "Nestle India Pvt. Ltd",
       description: "Manufacturing facility development with modern standards.",
       tags: ["Industrial", "Efficiency", "Modern"],
-      img: FallCelling,
+      image: Nestle,
       size: "md:col-span-2 md:row-span-2" // big block
     },
     {
       title: "ITBP Campus - Raebareli (CPWD)",
       description: "Infrastructure project for ITBP campus facilities.",
       tags: ["Government", "Infrastructure", "Campus"],
-      img: ItbpDalmau,
+      image: Cpwd,
       size: "md:col-span-2"
     },
     {
       title: "Tata Motors Ltd",
       description: "Automobile plant expansion project.",
       tags: ["Industrial", "Automobile", "Expansion"],
-      img: Quarter01
+      image: Tata
     },
     {
       title: "Titan Industries Ltd 2012",
       description: "Corporate facility setup for Titan.",
       tags: ["Corporate", "2012", "Industrial"],
-      img: Quarter02
+      image: Titan
     },
-        {
+    {
       title: "Tata Taco Ltd 2016",
       description: "Production unit built in 2016.",
       tags: ["Manufacturing", "2016", "Tata Group"],
-      img: ItbpDalmau,
+      image: Tata,
       size: "md:row-span-2" // tall card
     }
   ],
@@ -47,13 +50,13 @@ const projectCategories = {
       title: "ITBP Campus - Raebareli (CPWD)",
       description: "Campus project under CPWD.",
       tags: ["Government", "CPWD", "Campus"],
-      img: ItbpDalmau
+      image: Cpwd
     },
     {
       title: "CRPF Campus - Amethi (CPWD)",
       description: "CRPF training and admin blocks.",
       tags: ["Government", "CPWD", "Defense"],
-      img: Quarter02,
+      image: Cpwd,
       size: "md:row-span-2"
     }
   ],
@@ -62,14 +65,14 @@ const projectCategories = {
       title: "Prakalp Seva Sansthan",
       description: "Community support project.",
       tags: ["Community", "Social", "Support"],
-      img: Quarter01
+      image: Prakalpa
     },
     {
       title: "Right Tight Fastener Pvt. Ltd",
       description: "Factory and production units.",
       tags: ["Industrial", "Manufacturing"],
-      img: FallCelling
-    },
+      image: RightTight
+    }
   ]
 };
 
@@ -90,7 +93,10 @@ export default function ProjectSection() {
   );
 
   return (
-    <section className="px-[10vw] py-20 text-primary bg-white">
+    <section
+      className="px-[10vw] max-[450px]:px-5 pt-20 max-[450px]:pt-10 text-primary"
+      id="project-scroll-section"
+    >
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -99,10 +105,10 @@ export default function ProjectSection() {
         viewport={{ once: true }}
         className="text-center max-w-3xl mx-auto"
       >
-        <p className="uppercase text-sm tracking-widest text-secondary font-plein">
+        <p className="uppercase text-sm tracking-widest text-primary font-plein font-semibold">
           Portfolio
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold mt-2 text-primary font-clash">
+        <h2 className="text-4xl md:text-5xl font-light mt-2 text-primary font-clash">
           Our Recent Projects
         </h2>
         <p className="mt-4 text-secondary text-lg font-plein">
@@ -130,70 +136,49 @@ export default function ProjectSection() {
         ))}
       </div>
 
-      {/* Bento Grid */}
-      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[250px] gap-2 grid-flow-dense">
-        <AnimatePresence mode="wait">
-          {uniqueProjects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 60, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{
-                duration: 0.1,
-                ease: "easeOut",
-                delay: index * 0.1
-              }}
-              viewport={{ once: true }}
-              whileTap={{ scale: 0.98 }}
-              className={
-                selectedCategory === "All Projects"
-                  ? `relative group rounded-xl overflow-hidden bg-white border border-gray-200 shadow-sm cursor-pointer
-          ${project.size || "col-span-1 row-span-1"}
-          ${
-            project.title === "ITBP Campus - Raebareli (CPWD)"
-              ? "md:col-span-4 md:row-start-4"
-              : ""
-          }
-          ${
-            project.title === "Nestle India Pvt. Ltd"
-              ? "md:col-span-2 md:row-span-1 md:col-start-2 md:row-start-1"
-              : ""
-          }
-        `
-                  : `relative group rounded-xl overflow-hidden bg-white border border-gray-200 shadow-sm cursor-pointer
-          ${project.size || "col-span-1 row-span-1"}`
-              }
-            >
-              {/* Image */}
-              <img
-                src={project.img}
-                alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-              />
+      <div className="h-max w-full mb-10 max-[450px]:hidden">
+        {uniqueProjects.map((card, index) => {
+          return (
+            <Card key={index} card={card} height={"300px"} width={"60vw"} />
+          );
+        })}
+      </div>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-6 flex flex-col justify-end transition-all duration-500 group-hover:from-black/80">
-                <h3 className="text-lg font-bold text-white font-clash">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-gray-200 font-plein">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {project.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-1 text-xs bg-white/20 text-white backdrop-blur-sm rounded-full font-plein"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+      <div className="top-section w-full h-max flex flex-col gap-8 my-10 px-5 min-[450px]:hidden">
+        {uniqueProjects.map((item) => {
+          return (
+            <div className="card-section w-full h-max shadow-md">
+              {/* LEFT-section */}
+              <div className="left-section rounded-t-2xl h-auto w-full">
+                <img
+                  src={
+                    item.image
+                      ? item.image
+                      : "https://images.unsplash.com/photo-1694522362256-6c907336af43?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  }
+                  alt=""
+                  className="w-full h-full  rounded-t-2xl object-cover"
+                />
               </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+
+              {/* RIGHT-SECTION */}
+              <div className="right-section w-full flex flex-col rounded-b-2xl bg-primary text-white p-4">
+                {/* Heading with half underline */}
+                <div className="relative mb-6 ">
+                  <h1 className="font-clash text-[25px] font-semibold leading-relaxed">
+                    {item.title}
+                  </h1>
+                  <div className="absolute bottom-[-10px] left-0 w-40 max-[450px]:w-[70%] h-[2px] bg-white rounded-full"></div>
+                </div>
+
+                {/* Small description with modern offset */}
+                <p className="text-[20px] w-full leading-relaxed opacity-90">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

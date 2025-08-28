@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Navbar from "../Layout/Navbar";
 import TopSection from "../Layout/TopSection";
 import ServiceSection from "../Layout/ServiceSection";
@@ -7,8 +7,9 @@ import Footer from "../Layout/Footer";
 import ServicesTopImage from "../../assets/services.jpg";
 import ParallaxCards from "../Layout/ParallaxCards";
 
-
 const Service = () => {
+  const serviceRef = useRef(null);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -17,8 +18,10 @@ const Service = () => {
   });
 
   return (
-    <div className="w-full h-max">
-      <Navbar />
+    <div className="w-full h-max" ref={serviceRef}>
+
+
+       <Navbar serviceRef={serviceRef}/>
 
       <TopSection
         title={"Services"}
@@ -26,8 +29,7 @@ const Service = () => {
         img={ServicesTopImage}
       />
 
-      <ServiceSection />
-      <ParallaxCards/>
+      <ParallaxCards />
       <CtaSection />
       <Footer />
     </div>
