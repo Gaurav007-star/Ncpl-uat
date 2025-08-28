@@ -57,7 +57,7 @@ export default function VisionMission() {
           <h2 className="text-[50px] font-clash font-light text-primary">
             Our Vision
           </h2>
-          <p className="text-lg leading-relaxed text-secondary">
+          <p className="text-[18px] leading-relaxed text-secondary font-plein">
             To be a part of India's journey in <br/>becoming a global manufacturing
             hub.
           </p>
@@ -99,7 +99,7 @@ export default function VisionMission() {
           <h2 className="text-[50px] font-clash font-light text-primary">
             Our Mission
           </h2>
-          <p className="text-lg leading-relaxed text-secondary">
+          <p className="text-[18px] leading-relaxed text-secondary font-plein">
             To be the industry benchmark for quality, safety, and timely
             delivery of large-scale projects.
           </p>

@@ -29,7 +29,7 @@ const Milestone = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="px-[10vw] max-[450px]:px-5 py-16 max-[450px]:pt-0 overflow-hidden">
+    <div className="px-[10vw] max-[450px]:px-5 pb-16 max-[450px]:pt-0 overflow-hidden">
       {/* Top Section: Two Columns */}
       <div className="grid grid-cols-1 min-[1026px]:grid-cols-2 gap-15 max-[450px]:gap-5 items-start">
         {/* Left Column */}
@@ -51,7 +51,7 @@ const Milestone = () => {
           whileInView="show"
           viewport={{ once: true }}
         >
-          <p className="font-plein text-base text-secondary mb-8 text-[22px]">
+          <p className="font-plein text-base text-secondary mb-8 text-[18px]">
             We take pride in our track record of excellence. With numerous
             completed projects and a growing list of satisfied clients, our
             commitment to quality is evident.
@@ -66,7 +66,7 @@ const Milestone = () => {
             className="grid grid-cols-1 sm:grid-cols-2 gap-12 mb-8"
           >
             <motion.div variants={fadeRight} className="flex flex-col">
-              <h3 className="font-clash text-5xl text-primary mb-2 text-[40px]">
+              <h3 className="font-plein text-5xl text-primary mb-2 text-[40px]">
                 100+
               </h3>
               <p className="font-plein text-secondary text-[18px]">
@@ -75,7 +75,7 @@ const Milestone = () => {
             </motion.div>
 
             <motion.div variants={fadeRight} className="flex flex-col">
-              <h3 className="font-clash text-5xl text-primary mb-2 text-[40px]">
+              <h3 className="font-plein text-5xl text-primary mb-2 text-[40px]">
                 20+
               </h3>
               <p className="font-plein text-secondary text-[18px]">

@@ -7,6 +7,8 @@ import Cpwd from "../../assets/clients/Logos-01.jpg";
 import Titan from "../../assets/clients/Logos-09.jpg";
 import Prakalpa from "../../assets/clients/Logos-38.png";
 import RightTight from "../../assets/clients/Logos-39.png";
+import HindustanZinc from "../../assets/clients/Logos-13.jpg";
+import Manjushree from "../../assets/clients/Logos-19.jpg";
 
 // Projects grouped by categories
 const projectCategories = {
@@ -32,19 +34,100 @@ const projectCategories = {
       image: Tata
     },
     {
-      title: "Titan Industries Ltd 2012",
-      description: "Corporate facility setup for Titan.",
-      tags: ["Corporate", "2012", "Industrial"],
-      image: Titan
+      title: "TPEML",
+      description:
+        "Industrial project under Tata Passenger Electric Mobility Limited.",
+      tags: ["Industrial", "Tata Group", "Electric"],
+      image: Tata
     },
     {
-      title: "Tata Taco Ltd 2016",
-      description: "Production unit built in 2016.",
-      tags: ["Manufacturing", "2016", "Tata Group"],
-      image: Tata,
-      size: "md:row-span-2" // tall card
+      title: "Interarch Building Project",
+      description: "Pre-engineered building solutions project.",
+      tags: ["Infrastructure", "Industrial", "PEB"],
+      // image: Interarch
+    },
+    {
+      title: "Technical Associate",
+      description: "Construction and industrial works for Technical Associate.",
+      tags: ["Industrial", "Construction"],
+      // image: Technical
+    },
+    {
+      title: "Luminous Power Technologies Pvt. Ltd",
+      description: "Manufacturing plant setup for Luminous Power.",
+      tags: ["Industrial", "Power", "Manufacturing"],
+      // image: Luminous
     }
   ],
+  // "Major Projects": [
+  //   {
+  //     title: "Titan Industries Ltd 2012",
+  //     description: "Corporate facility setup for Titan in 2012.",
+  //     tags: ["Corporate", "2012", "Industrial"],
+  //     image: Titan
+  //   },
+  //   {
+  //     title: "Tata Taco Ltd 2016",
+  //     description: "Production unit built in 2016.",
+  //     tags: ["Manufacturing", "2016", "Tata Group"],
+  //     image: Tata,
+  //     size: "md:row-span-2"
+  //   },
+  //   {
+  //     title: "MM Forgings Ltd 2016",
+  //     description: "Forging plant construction completed in 2016.",
+  //     tags: ["Industrial", "Forging", "2016"],
+  //     image: MMForgings
+  //   },
+  //   {
+  //     title: "Parkson Packaging Ltd 2012 & 2016",
+  //     description: "Packaging facility developments in 2012 & 2016.",
+  //     tags: ["Packaging", "Industrial", "2012", "2016"],
+  //     image: Parkson
+  //   },
+  //   {
+  //     title: "TVS Srichakra Ltd 2012 & 2016",
+  //     description: "Automotive tyre plant expansions in 2012 & 2016.",
+  //     tags: ["Automobile", "Tyres", "2012", "2016"],
+  //     image: TVS
+  //   },
+  //   {
+  //     title: "Huhtamaki PPL India Ltd 2012",
+  //     description: "Packaging industry project in 2012.",
+  //     tags: ["Packaging", "2012", "Industrial"],
+  //     image: Huhtamaki
+  //   },
+  //   {
+  //     title: "Tata Motors Ltd 2014 - present",
+  //     description: "Long-term automobile plant projects since 2014.",
+  //     tags: ["Industrial", "Automobile", "Expansion"],
+  //     image: Tata
+  //   },
+  //   {
+  //     title: "Meghdoot Packaging 2018",
+  //     description: "Packaging facility developed in 2018.",
+  //     tags: ["Packaging", "Industrial", "2018"],
+  //     image: Meghdoot
+  //   },
+  //   {
+  //     title: "Century Pulp and Paper 2012",
+  //     description: "Pulp and paper manufacturing unit setup in 2012.",
+  //     tags: ["Paper", "Manufacturing", "2012"],
+  //     image: Century
+  //   },
+  //   {
+  //     title: "M/s IVAX Paper Chemical Pvt. Ltd 2021",
+  //     description: "Chemical plant project completed in 2021.",
+  //     tags: ["Chemical", "Paper", "2021"],
+  //     image: IVAX
+  //   },
+  //   {
+  //     title: "Tata Smart City Mobility Pvt. Ltd 2025",
+  //     description: "Upcoming smart city mobility project in 2025.",
+  //     tags: ["Mobility", "Smart City", "2025"],
+  //     image: TataSmart
+  //   }
+  // ],
   "Govt Projects": [
     {
       title: "ITBP Campus - Raebareli (CPWD)",
@@ -72,11 +155,42 @@ const projectCategories = {
       description: "Factory and production units.",
       tags: ["Industrial", "Manufacturing"],
       image: RightTight
+    },
+    {
+      title: "Geeta Industries Pvt. Ltd",
+      description: "Industrial manufacturing project.",
+      tags: ["Industrial", "Manufacturing"],
+      // image: Geeta
+    },
+    {
+      title: "Manjushree Industries Ltd",
+      description: "Packaging solutions facility.",
+      tags: ["Industrial", "Packaging"],
+      image: Manjushree
+    },
+    {
+      title: "Manjushree Technopack",
+      description: "Industrial packaging project.",
+      tags: ["Industrial", "Packaging"],
+      image: Manjushree
+    },
+    {
+      title: "M/s Syndicate Auto Components",
+      description: "Automobile component manufacturing plant.",
+      tags: ["Automobile", "Components", "Industrial"],
+      // image: Syndicate
+    },
+    {
+      title: "Hindustan Zinc",
+      description: "Mining and zinc processing plant.",
+      tags: ["Mining", "Industrial", "Zinc"],
+      image: HindustanZinc
     }
   ]
 };
 
 const allProjects = Object.values(projectCategories).flat();
+console.log(allProjects);
 
 export default function ProjectSection() {
   const [selectedCategory, setSelectedCategory] = useState("All Projects");

@@ -71,12 +71,12 @@ const InfinitySlider = () => (
       {ClientImages.map((client, index) => (
         <div
           key={index}
-          className="flex items-center justify-center rounded-2xl transition"
+          className="flex  items-center justify-center rounded-2xl transition"
         >
           <img
             src={client}
             alt={`client-${index + 1}`}
-            className="w-full h-[150px] object-contain"
+            className="w-full h-[130px] max-[450px]:h-[100px] object-contain"
           />
         </div>
       ))}

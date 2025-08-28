@@ -25,7 +25,7 @@ const Card = ({
   return (
     <div
       ref={container}
-      className="h-[500px] w-full sticky top-0 flex flex-col  items-center justify-center max-[450px]:hidden"
+      className="h-[500px] w-full sticky top-0 flex flex-col items-center justify-center max-[450px]:hidden"
     >
       <motion.div
         style={{
@@ -55,7 +55,7 @@ const Card = ({
         {/* RIGHT SECTION */}
         <div
           style={{ backgroundColor: card.color }}
-          className="right w-[55%] max-[450px]:w-full h-full p-4 flex flex-col items-start justify-start rounded-r-2xl max-[450px]:rounded-r-none max-[450px]:rounded-b-2xl space-y-5 bg-primary"
+          className="right w-[55%] max-[450px]:w-full h-full p-4 flex flex-col items-start justify-center rounded-r-2xl max-[450px]:rounded-r-none max-[450px]:rounded-b-2xl space-y-5 bg-primary"
         >
           <h1 className="font-clash text-[50px] max-[450px]:text-[20px] text-white w-full leading-12">
             {card.title}

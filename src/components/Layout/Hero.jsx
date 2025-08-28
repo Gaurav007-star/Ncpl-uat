@@ -7,6 +7,7 @@ import { SpinningText } from "../magicui/spinning-text";
 import HomeBackground from "../../assets/homeBackgroud.jpg";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { useNavigate } from "react-router";
+import backgroundVideo from "../../assets/backgroundVideo.mp4";
 
 export default function Hero() {
 
@@ -25,12 +26,15 @@ export default function Hero() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <div className="relative overflow-hidden rounded-xl ">
-            <div className="overlay absolute w-full h-full bg-black/30 top-0 left-0">
+            <div className="overlay absolute w-full h-full bg-black/20 top-0 left-0">
 
             </div>
             {/* Background Image */}
-            <motion.img
-              src={HomeBackground}
+            <video
+              src={backgroundVideo}
+              loop
+              autoPlay
+              muted
               alt="workers on site"
               className="block h-[360px] md:h-[700px] w-full object-cover object-top"
             />
