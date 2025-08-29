@@ -4,6 +4,7 @@ import OurStory from "../../assets/OurStory.jpg";
 import Journey01 from "../../assets/journey01.jpg";
 import arrowBullet from "../../assets/journeyBullet.svg";
 import Button from "../ui/userCreate/Button";
+import VisionBackground from "../../assets/vision.avif";
 
 const journeyPoints = [
   {
@@ -64,7 +65,7 @@ export default function VisionMission() {
         </motion.div>
 
         <motion.img
-          src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1170&auto=format&fit=crop"
+          src={VisionBackground}
           alt="Vision"
           style={{ y: yImage }}
           className="w-[60%] max-[1025px]:w-full h-80 object-cover rounded-2xl shadow-xl"
