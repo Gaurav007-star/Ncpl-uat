@@ -1,18 +1,20 @@
 import React from "react";
 import Founder from "../../assets/founderImage.jpg"; // <-- Replace with your founder's image path
+import { FaLinkedin } from "react-icons/fa6";
+import { Navigate, useNavigate } from "react-router";
 
 export default function NewspaperLayout() {
+
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen  text-neutral-900 font-plein">
       <div className="w-full h-max px-[10vw] my-20">
         {/* Header / Masthead */}
-        <header className="pb-4 border-b border-neutral-300">
+        <header className="pb-4 border-b border-neutral-300 text-primary">
           <h1 className="text-3xl md:text-4xl lg:text-[60px] font-medium leading-tight mt-2">
             Born and Raised in Uttar Pradesh: A Journey of Faith and Resilience
           </h1>
-          <p className="text-[20px] text-neutral-600 mt-1">
-            A founder's story --
-          </p>
         </header>
 
         {/* Main grid */}
@@ -68,17 +70,16 @@ export default function NewspaperLayout() {
           </article>
 
           {/* Right: Founder Portrait only */}
-          <aside className="md:col-span-1">
+          <aside className="md:col-span-1 font-plein">
             <figure className="sticky top-6">
               {/* Smaller Image */}
               <img
                 src={Founder}
                 alt="Founder Portrait"
-                className="w-2/3 mx-auto h-auto object-cover"
+                className="w-2/3 mx-auto h-auto object-cover rounded-2xl"
               />
-              <figcaption className="text-xs italic mt-2 text-center text-neutral-700">
-                Portrait of our Founder — rooted in simplicity, resilience, and
-                vision.
+              <figcaption className="text-[18px] italic mt-2 text-center text-neutral-700 flex items-center justify-center gap-2">
+                JB Singh <a href="https://www.linkedin.com/company/ntnl-construction-pvt-ltd/" target="_blank"><FaLinkedin className="text-[24px]"/></a>
               </figcaption>
             </figure>
           </aside>

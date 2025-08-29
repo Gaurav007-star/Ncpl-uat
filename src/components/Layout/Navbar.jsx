@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/ncpl-logo.png";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { CgMenuRightAlt } from "react-icons/cg";
 const links = [
   {
@@ -63,11 +63,20 @@ const links = [
 const Navbar = () => {
   const [isInService, setIsInService] = useState(false);
   const navigate = useNavigate();
-
+  const path = useLocation();
+  console.log(path);
+  
   useEffect(() => {
-    const target =
-      document.getElementById("parallax-card-section") ||
-      document.getElementById("project-scroll-section");
+    let target = "";
+
+    if (path.pathname === "/service") {
+      target = document.getElementById("parallax-card-section");
+    } else {
+      target = document.getElementById("project-scroll-section");
+    }
+
+    // console.log(target);
+
     if (!target) return; // if element doesn't exist, skip
 
     const observer = new IntersectionObserver(
@@ -82,7 +91,7 @@ const Navbar = () => {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [path.pathname]);
 
   return (
     <div

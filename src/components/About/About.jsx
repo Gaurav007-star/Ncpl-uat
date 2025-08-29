@@ -31,7 +31,7 @@ const About = () => {
       <div className="w-full px-[10vw] pt-10 max-[450px]:pt-5 font-plein text-neutral-900">
         {/* Headline */}
         <header className="mt-6 pb-4 border-b w-full border-neutral-300">
-          <h1 className="text-4xl md:text-5xl lg:text-[60px] font-medium leading-tight text-left">
+          <h1 className="text-4xl md:text-5xl lg:text-[60px] font-medium leading-tight text-left text-primary">
             Company Profile
           </h1>
         </header>
@@ -80,7 +80,7 @@ const About = () => {
           <img
             src={companyProfile}
             alt="Company Profile"
-            className="w-full h-[400px] object-cover"
+            className="w-full h-[400px] object-cover rounded-2xl"
           />
         </figure>
       </div>

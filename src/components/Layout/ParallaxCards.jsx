@@ -86,7 +86,7 @@ export default function ParallaxCards() {
     >
       <ServiceSection />
       {services.map((card, index) => {
-        return <Card key={index} card={card} width={"70vw"} height={"350px"} />;
+        return <Card key={index} card={card} width={"70vw"} height={"350px"} imgScaleStatus={true}/>;
       })}
 
       <div className="top-section w-full h-max flex flex-col gap-6 my-10 px-[10vw] max-[450px]:px-5 min-[450px]:hidden">

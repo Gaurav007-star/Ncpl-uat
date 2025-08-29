@@ -9,7 +9,8 @@ const Card = ({
   targetScale,
   progress,
   width,
-  height
+  height,
+  imgScaleStatus=true
 }) => {
   const container = useRef(null);
 
@@ -41,12 +42,12 @@ const Card = ({
         <div className="left-section w-[45%] max-[450px]:w-full h-full">
           <div className="image-wrapper overflow-hidden w-full h-full rounded-l-2xl max-[450px]:rounded-l-none max-[450px]:rounded-t-2xl">
             <motion.div
-              style={{ scale: ImageScale }}
+              style={{ scale: imgScaleStatus ? ImageScale : 1 }}
               className="image w-full h-full rounded-l-2xl  max-[450px]:rounded-t-2xl"
             >
               <img
                 src={card.image}
-                className="w-full h-full object-cover rounded-l-2xl max-[450px]:rounded-t-2xl"
+                className={`w-full h-full ${imgScaleStatus ? "object-cover" : "object-contain"} rounded-l-2xl max-[450px]:rounded-t-2xl`}
               />
             </motion.div>
           </div>
@@ -55,17 +56,17 @@ const Card = ({
         {/* RIGHT SECTION */}
         <div
           style={{ backgroundColor: card.color }}
-          className="right w-[55%] max-[450px]:w-full h-full p-4 flex flex-col items-start justify-center rounded-r-2xl max-[450px]:rounded-r-none max-[450px]:rounded-b-2xl space-y-5 bg-primary"
+          className="right w-[55%] max-[450px]:w-full h-full p-4 flex flex-col items-start justify-center rounded-r-2xl max-[450px]:rounded-r-none max-[450px]:rounded-b-2xl space-y-5 max-[1025px]:space-y-3 bg-primary"
         >
-          <h1 className="font-clash text-[50px] max-[450px]:text-[20px] text-white w-full leading-12">
+          <h1 className="font-clash text-[50px] max-[450px]:text-[20px] max-[1025px]:text-[25px] text-white w-full leading-12 max-[1025px]:leading-6">
             {card.title}
           </h1>
-          <p className="font-plein text-[20px] text-white w-[80%]">
+          <p className="font-plein text-[20px] max-[1025px]:text-[18px] text-white w-[80%] max-[1025px]:w-full">
             {card.description}
           </p>
 
           {/* PILL section */}
-          <div className="flex flex-wrap gap-3 py-3 rounded-xl">
+          <div className="flex flex-wrap gap-3 max-[1025px]:gap-1 py-3 max-[1025px]:py-0 h-max rounded-xl">
             {card.tags?.map((pill, index) => (
               <span
                 key={index}

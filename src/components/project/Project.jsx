@@ -25,6 +25,7 @@ const Project = () => {
         description={`From Road Infrastructure to PEB showcase our expertise. Each one reflects our quality, precision, and many more successful ventures delivered with excellence.`}
         img={ProjectTopImage}
       />
+      
       <ProjectSection />
       
       {/* Time line */}

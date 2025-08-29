@@ -9,6 +9,11 @@ import Prakalpa from "../../assets/clients/Logos-38.png";
 import RightTight from "../../assets/clients/Logos-39.png";
 import HindustanZinc from "../../assets/clients/Logos-13.jpg";
 import Manjushree from "../../assets/clients/Logos-19.jpg";
+import Interarch from "../../assets/clients/Logos-41.jpg";
+import Technical from "../../assets/clients/Logos-40.jpg";
+import Luminous from "../../assets/clients/Logos-42.jpg";
+import Geeta from "../../assets/clients/Logos-43.jpg";
+import Syndicate from "../../assets/clients/Logos-44.jpg";
 
 // Projects grouped by categories
 const projectCategories = {
@@ -44,19 +49,19 @@ const projectCategories = {
       title: "Interarch Building Project",
       description: "Pre-engineered building solutions project.",
       tags: ["Infrastructure", "Industrial", "PEB"],
-      // image: Interarch
+      image: Interarch
     },
     {
       title: "Technical Associate",
       description: "Construction and industrial works for Technical Associate.",
       tags: ["Industrial", "Construction"],
-      // image: Technical
+      image: Technical
     },
     {
       title: "Luminous Power Technologies Pvt. Ltd",
       description: "Manufacturing plant setup for Luminous Power.",
       tags: ["Industrial", "Power", "Manufacturing"],
-      // image: Luminous
+      image: Luminous
     }
   ],
   // "Major Projects": [
@@ -160,7 +165,7 @@ const projectCategories = {
       title: "Geeta Industries Pvt. Ltd",
       description: "Industrial manufacturing project.",
       tags: ["Industrial", "Manufacturing"],
-      // image: Geeta
+      image: Geeta
     },
     {
       title: "Manjushree Industries Ltd",
@@ -178,7 +183,7 @@ const projectCategories = {
       title: "M/s Syndicate Auto Components",
       description: "Automobile component manufacturing plant.",
       tags: ["Automobile", "Components", "Industrial"],
-      // image: Syndicate
+      image: Syndicate
     },
     {
       title: "Hindustan Zinc",
@@ -190,7 +195,6 @@ const projectCategories = {
 };
 
 const allProjects = Object.values(projectCategories).flat();
-console.log(allProjects);
 
 export default function ProjectSection() {
   const [selectedCategory, setSelectedCategory] = useState("All Projects");
@@ -207,10 +211,7 @@ export default function ProjectSection() {
   );
 
   return (
-    <section
-      className="px-[10vw] max-[450px]:px-5 pt-20 max-[450px]:pt-10 text-primary"
-      id="project-scroll-section"
-    >
+    <section className="px-[10vw] max-[450px]:px-5 pt-20 max-[450px]:pt-10 text-primary" id="project-scroll-section">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -250,10 +251,19 @@ export default function ProjectSection() {
         ))}
       </div>
 
-      <div className="h-max w-full mb-10 max-[450px]:hidden">
+      <div
+        className="h-max w-full mb-10 max-[450px]:hidden"
+        
+      >
         {uniqueProjects.map((card, index) => {
           return (
-            <Card key={index} card={card} height={"300px"} width={"60vw"} />
+            <Card
+              key={index}
+              card={card}
+              height={"300px"}
+              width={"60vw"}
+              imgScaleStatus={false}
+            />
           );
         })}
       </div>
