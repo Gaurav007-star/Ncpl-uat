@@ -43,7 +43,7 @@ const Card = ({
           <div className="image-wrapper overflow-hidden w-full h-full rounded-l-2xl max-[450px]:rounded-l-none max-[450px]:rounded-t-2xl">
             <motion.div
               style={{ scale: imgScaleStatus ? ImageScale : 1 }}
-              className="image w-full h-full rounded-l-2xl  max-[450px]:rounded-t-2xl"
+              className="image w-full h-full rounded-l-2xl  max-[450px]:rounded-t-2xl bg-white"
             >
               <img
                 src={card.image}
