@@ -79,7 +79,7 @@ export default function NewspaperLayout() {
                 className="w-2/3 mx-auto h-auto object-cover rounded-2xl"
               />
               <figcaption className="text-[18px] italic mt-2 text-center text-neutral-700 flex items-center justify-center gap-2">
-                JB Singh <a href="https://www.linkedin.com/company/ntnl-construction-pvt-ltd/" target="_blank"><FaLinkedin className="text-[24px]"/></a>
+                JB Singh <a href="https://www.linkedin.com/in/j-b-singh/" target="_blank"><FaLinkedin className="text-[24px]"/></a>
               </figcaption>
             </figure>
           </aside>

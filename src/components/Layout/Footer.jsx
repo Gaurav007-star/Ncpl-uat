@@ -14,7 +14,10 @@ const footerData = {
     socials: [
       { icon: <FaFacebook />, link: "#" },
       { icon: <FaSquareXTwitter />, link: "#" },
-      { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/ntnl-construction-pvt-ltd/" },
+      {
+        icon: <FaLinkedin />,
+        link: "https://www.linkedin.com/company/ntnl-construction-pvt-ltd/"
+      },
       { icon: <RiInstagramFill />, link: "#" }
     ]
   },
@@ -41,7 +44,7 @@ const footerData = {
     {
       icon: <Mail className="w-4 h-4 " />,
       text: "info@ntnlconstruction.com"
-    },
+    }
   ]
 };
 
@@ -117,7 +120,12 @@ export default function Footer() {
       </div>
       {/* Bottom Bar */}
       <div className="mt-12 pt-6 border-t border-gray-700 flex flex-wrap justify-between text-sm font-plein text-gray-400">
-        <p>© {date} National Construction. All rights reserved.</p>
+        <p>
+          © {date} NTNL Construction. All rights reserved.{" "}
+          <a href="https://www.techscooper.com/" target="_blank" className="hover:text-white transition">
+            Design by TechScooper
+          </a>
+        </p>
         <div className="flex gap-6">
           <a href="#" className="hover:text-white transition">
             Privacy Policy

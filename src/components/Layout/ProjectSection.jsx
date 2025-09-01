@@ -211,7 +211,10 @@ export default function ProjectSection() {
   );
 
   return (
-    <section className="px-[10vw] max-[450px]:px-5 pt-20 max-[450px]:pt-10 text-primary" id="project-scroll-section">
+    <section
+      className="px-[10vw] max-[450px]:px-5 pt-20 max-[450px]:pt-10 text-primary"
+      id="project-scroll-section"
+    >
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -251,10 +254,7 @@ export default function ProjectSection() {
         ))}
       </div>
 
-      <div
-        className="h-max w-full mb-10 max-[450px]:hidden"
-        
-      >
+      <div className="h-max w-full mb-10 max-[450px]:hidden">
         {uniqueProjects.map((card, index) => {
           return (
             <Card
@@ -268,6 +268,8 @@ export default function ProjectSection() {
         })}
       </div>
 
+
+        {/* FOR MOBILE  */}
       <div className="top-section w-full h-max flex flex-col gap-8 my-10 px-5 min-[450px]:hidden">
         {uniqueProjects.map((item) => {
           return (

@@ -6,7 +6,7 @@ const Button = ({ btn_name, route, outlineColor = "primary" }) => {
 
   const CustomCss = `relative inline-block px-6 py-1 gap-2 leading-10 
           cursor-pointer overflow-hidden 
-          border-2 border-${outlineColor} rounded-md 
+          border-2 border-primary rounded-md 
           text-${outlineColor} 
           z-[1] transition-colors duration-500 
           group-hover:text-white hover:outline-none
@@ -14,10 +14,7 @@ const Button = ({ btn_name, route, outlineColor = "primary" }) => {
 
   return (
     <div className="inline-block group">
-      <button
-        className={CustomCss}
-        onClick={() => navigate(route)}
-      >
+      <button className={CustomCss} onClick={() => navigate(route)}>
         {btn_name} <span aria-hidden>→</span>
         <span
           className="

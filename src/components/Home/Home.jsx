@@ -12,6 +12,8 @@ import { motion } from "motion/react";
 
 import { GoArrowUpRight } from "react-icons/go";
 import { useNavigate } from "react-router";
+import Journey from "../Layout/Journey";
+import Button from "../ui/userCreate/Button";
 
 const Home = () => {
 
@@ -33,7 +35,7 @@ const Home = () => {
       <VisionMission />
 
       {/* service section */}
-      <section className="relative h-[500px] max-[1025px]:h-max flex max-[1025px]:flex-col items-center justify-between gap-8 max-[1025px]:gap-6 px-[10vw] py-16 min-[1600px]:mb-10 max-[1025px]:pt-0 max-[1025px]:pb-10  max-[450px]:px-5">
+      <section className="relative h-[500px] max-[1025px]:h-max flex max-[1025px]:flex-col items-center justify-between gap-8 max-[1025px]:gap-6 px-[10vw] py-16 min-[1600px]:mb-20 min-[1600px]:mt-10 mb-10 max-[1025px]:pt-0 max-[1025px]:pb-10  max-[450px]:px-5">
         {/* Left Content */}
         <div className="w-[45%] h-full flex flex-col justify-center gap-4 max-[1025px]:w-full ">
           <h1 className="text-4xl md:text-[50px] font-light font-clash text-primary leading-tight">
@@ -44,14 +46,16 @@ const Home = () => {
             commercial, and industrial projects. Our team ensures durability,
             precision, and modern design tailored to your needs.
           </p>
-          <motion.button
+          {/* <motion.button
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.2 }}
             className="border bg-primary w-max rounded-md px-6 py-3 flex items-center gap-2 text-white font-plein cursor-pointer"
             onClick={()=>navigate("/service")}
           >
             Our Services →
-          </motion.button>
+          </motion.button> */}
+          
+        <Button btn_name={"Our Services"} route={"/service"}/>
         </div>
 
         {/* Middle Divider + Circle Arrow */}
@@ -74,6 +78,8 @@ const Home = () => {
           />
         </div>
       </section>
+
+      <Journey/>
 
       <CtaSection />
       <Footer />

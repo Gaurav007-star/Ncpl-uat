@@ -43,11 +43,11 @@ const Card = ({
           <div className="image-wrapper overflow-hidden w-full h-full rounded-l-2xl max-[450px]:rounded-l-none max-[450px]:rounded-t-2xl">
             <motion.div
               style={{ scale: imgScaleStatus ? ImageScale : 1 }}
-              className="image w-full h-full rounded-l-2xl  max-[450px]:rounded-t-2xl bg-white"
+              className="image w-full h-full bg-white rounded-l-2xl flex items-center justify-center max-[450px]:rounded-t-2xl"
             >
               <img
                 src={card.image}
-                className={`w-full h-full ${imgScaleStatus ? "object-cover" : "object-contain"} rounded-l-2xl max-[450px]:rounded-t-2xl`}
+                className={` h-full ${imgScaleStatus ? "object-cover" : "object-contain w-60"} rounded-l-2xl max-[450px]:rounded-t-2xl`}
               />
             </motion.div>
           </div>

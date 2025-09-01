@@ -21,9 +21,7 @@ const About = () => {
       {/* top-section */}
       <TopSection
         title={"About Us"}
-        description={`We are a trusted construction agency, committed to delivering
-          excellence, safety, and innovative solutions in every project we
-          undertake.`}
+        description={` A Journey of Faith, Resilience, and Purpose.`}
         img={AboutTopImage}
       />
 
@@ -39,7 +37,7 @@ const About = () => {
         {/* Story Content */}
         <main className="mt-6">
           {/* Newspaper style = columns */}
-          <div className="columns-1 md:columns-2 gap-10 text-justify font-plein leading-relaxed text-[18px] md:text-[18px]">
+          <div className="columns-1 gap-10 text-justify font-plein leading-relaxed text-[18px] md:text-[18px]">
             <p className="mb-4 first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:leading-none">
               Established in 2005, at the dawn of the industrial renaissance in
               the Tarai region of Rudrapur, Udham Singh Nagar, Uttarakhand,

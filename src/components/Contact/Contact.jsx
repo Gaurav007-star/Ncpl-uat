@@ -240,18 +240,17 @@ const Contact = () => {
                 Call Us Directly
               </p>
               <p className="text-sm font-plein text-secondary">
-                Available during working hours.
+                Office Hours: Mon-Sat 10am-7pm
               </p>
               <p className="text-sm text-primary">+91 6396722144</p>
             </div>
           </div>
         </div>
       </section>
-
       {/* MapSection */}
       <div className="div w-full h-[400px] px-[10vw] mb-20">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3490.0497258607425!2d79.39854237496994!3d28.98589746794739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a07fe87226fed7%3A0x6847c299c4395b2f!2sp%2C%20XCP2%2B9F6%2C%20C-28%2C%20Near%20LIC%20building%2C%20Awas%20Vikas%2C%20Rudrapur%2C%20Jagatpura%2C%20Uttarakhand%20263153!5e0!3m2!1sen!2sin!4v1756449609604!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.3821745417245!2d79.40117378066316!3d28.987591647398514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a07f004f84bdb1%3A0xa3e06ec74119f4e1!2sNTNL%20Construction%20Private%20Limited!5e0!3m2!1sen!2sin!4v1756711528902!5m2!1sen!2sin"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           className="w-full h-full rounded-2xl"

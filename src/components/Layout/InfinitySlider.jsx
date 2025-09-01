@@ -43,23 +43,53 @@ import Client35 from "../../assets/clients/Logos-35.jpg";
 import Client36 from "../../assets/clients/Logos-36.jpg";
 import Client37 from "../../assets/clients/Logos-37.jpg";
 
-
-
 const ClientImages = [
-  Client01, Client02, Client03, Client04, Client05,
-  Client06, Client07, Client08, Client09, Client10,
-  Client11, Client12, Client13, Client14, Client15,
-  Client16, Client17, Client18, Client19, Client20,
-  Client21, Client22, Client23, Client24, Client25,
-  Client26, Client27, Client28, Client29, Client30,
-  Client31, Client32, Client33, Client34, Client35,Client36,Client37
+  Client15,
+  Client16,
+  Client10,
+  Client21,
+  Client08,
+  Client09,
+  Client27,
+  Client19,
+  Client01,
+  Client02,
+  Client03,
+  Client05,
+  Client11,
+  Client12,
+  Client24,
+  Client34,
+  Client04,
+  Client06,
+  Client07,
+  Client13,
+  Client14,
+  Client17,
+  Client18,
+  Client20,
+  Client22,
+  Client23,
+  Client25,
+  Client26,
+  Client28,
+  Client29,
+  Client30,
+  Client31,
+  Client32,
+  Client33,
+  Client35,
+  Client36,
+  Client37
 ];
 
 const InfinitySlider = () => (
-  <div className="w-full px-[10vw] max-[450px]:px-5 pb-16 max-[1025px]:pb-0 mt-20 max-[450px]:mt-10">
+  <div className="w-full max-[450px]:px-5  max-[1025px]:pb-0 my-20 max-[450px]:mt-10">
     {/* Header */}
     <div className="mb-12 w-full flex flex-col items-center justify-center">
-      <h2 className="text-[50px] max-[450px]:text-[40px] font-light text-primary">Esteemed Clients</h2>
+      <h2 className="text-[50px] max-[450px]:text-[40px] font-light text-primary">
+        Esteemed Clients
+      </h2>
       <p className="mt-2 text-gray-600 w-[70%] max-[450px]:w-full text-center">
         We&apos;re honored to have partnered with these reputable organizations
         on impactful architectural projects through the decades.
@@ -67,7 +97,7 @@ const InfinitySlider = () => (
     </div>
 
     {/* Grid of Clients */}
-    <div className="w-full flex flex-wrap justify-center gap-6">
+    {/* <div className="w-full flex flex-wrap justify-center gap-6">
       {ClientImages.map((client, index) => (
         <div
           key={index}
@@ -80,6 +110,50 @@ const InfinitySlider = () => (
           />
         </div>
       ))}
+    </div> */}
+
+    <div className="marquee-section w-full h-max py-4 flex flex-col gap-5 mt-10">
+      <Marquee speed={50} dragSpeed={2}> 
+        <MarqueeContent>
+          {ClientImages.slice(0, 9).map((item, index) => (
+            <MarqueeItem className="h-50 w-50" key={index}>
+              <img
+                alt={`Placeholder ${index}`}
+                className="overflow-hidden rounded-full"
+                src={item}
+              />
+            </MarqueeItem>
+          ))}
+        </MarqueeContent>
+      </Marquee>
+
+      <Marquee speed={50} dragSpeed={2} direction="right">
+        <MarqueeContent direction="right">
+          {ClientImages.slice(9, 17).map((item, index) => (
+            <MarqueeItem className="h-50 w-50" key={index}>
+              <img
+                alt={`Placeholder ${index}`}
+                className="overflow-hidden rounded-full"
+                src={item}
+              />
+            </MarqueeItem>
+          ))}
+        </MarqueeContent>
+      </Marquee>
+
+      <Marquee speed={50} dragSpeed={2}>
+        <MarqueeContent>
+          {ClientImages.slice(17).map((item, index) => (
+            <MarqueeItem className="h-50 w-50 overflow-hidden" key={index}>
+              <img
+                alt={`Placeholder ${index}`}
+                className="overflow-hidden rounded-full"
+                src={item}
+              />
+            </MarqueeItem>
+          ))}
+        </MarqueeContent>
+      </Marquee>
     </div>
   </div>
 );

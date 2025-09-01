@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import logo from "../../assets/ncpl-logo.png";
 import { Link, useLocation, useNavigate } from "react-router";
 import { CgMenuRightAlt } from "react-icons/cg";
+import { GoArrowUpRight } from "react-icons/go";
+
+
+
 const links = [
   {
     id: "home",
@@ -117,9 +121,9 @@ const Navbar = () => {
             to={item.route}
             // onMouseEnter={() => setSelectLink(item.id)}
             // onMouseLeave={() => setSelectLink("")}
-            className="text-[20px] hover:scale-105 hover:text-black transition-transform duration-200"
+            className={`text-[20px] hover:scale-105  transition-transform duration-200 ${item.id === "contact" ? "border-primary border-2 px-3 py-2 rounded-md flex items-center gap-1" : "hover:text-black"} `}
           >
-            {item.title}
+            {item.title}{item.id === "contact" &&  <GoArrowUpRight className="text-[20px]"/>}
           </Link>
         ))}
       </div>
@@ -146,7 +150,7 @@ const Navbar = () => {
                 to={item.route}
                 // onMouseEnter={() => setSelectLink(item.id)}
                 // onMouseLeave={() => setSelectLink("")}
-                className="text-[40px] hover:scale-105 text-white transition-transform duration-200"
+                className={`text-[40px] hover:scale-105 text-white transition-transform duration-200`}
               >
                 {item.title}
               </Link>
