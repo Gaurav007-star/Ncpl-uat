@@ -84,7 +84,7 @@ const ClientImages = [
 ];
 
 const InfinitySlider = () => (
-  <div className="w-full max-[450px]:px-5  max-[1025px]:pb-0 my-20 max-[450px]:mt-10">
+  <div className="w-full max-[450px]:px-5  max-[1025px]:pb-0 mt-20 mb-10 max-[450px]:mt-10">
     {/* Header */}
     <div className="mb-12 w-full flex flex-col items-center justify-center">
       <h2 className="text-[50px] max-[450px]:text-[40px] font-light text-primary">
