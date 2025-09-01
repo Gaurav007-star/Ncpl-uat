@@ -7,6 +7,8 @@ import Lenis from "lenis";
 import ServicePage from "./pages/Service/ServicePage";
 import ProjectPage from "./pages/Project/ProjectPage";
 import ContactPage from "./pages/Contact/ContactPage";
+import Privacy from "./pages/Privacy/Privacy";
+import Term from "./pages/Term/Term";
 
 const App = () => {
   useEffect(() => {
@@ -27,6 +29,9 @@ const App = () => {
         <Route path="/service" element={<ServicePage />} />
         <Route path="/project" element={<ProjectPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/term" element={<Term />} />
+
       </Routes>
     </BrowserRouter>
   );

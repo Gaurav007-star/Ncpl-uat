@@ -123,14 +123,14 @@ export default function Footer() {
         <p>
           © {date} NTNL Construction. All rights reserved.{" "}
           <a href="https://www.techscooper.com/" target="_blank" className="hover:text-white transition">
-            Design by TechScooper
+            Designed by TechScooper
           </a>
         </p>
         <div className="flex gap-6">
-          <a href="#" className="hover:text-white transition">
+          <a href="/privacy" target="_blank" className="hover:text-white transition">
             Privacy Policy
           </a>
-          <a href="#" className="hover:text-white transition">
+          <a href="/term" target="_blank" className="hover:text-white transition">
             Terms of Service
           </a>
           <a href="#" className="hover:text-white transition">
