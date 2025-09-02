@@ -7,8 +7,8 @@ const HomePage = () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>NTNL</title>
-        <meta name="description" content="NTNL is a forward-thinking construction company committed to delivering high-quality, sustainable, and innovative building solutions. With expertise in commercial, residential, and infrastructure projects, NTNL combines modern technology with skilled craftsmanship to create lasting value. Guided by integrity, safety, and excellence, we transform visions into reality while building trust and strong partnerships with every project we undertake." />
+        <title>NTNL Pvt. Ltd. | Civil & Industrial Projects</title>
+        <meta name="description" content="Leading civil construction company, delivering industrial, infrastructure & turnkey projects with quality, safety & on-time execution." />
       </Helmet>
       <Home />
     </>

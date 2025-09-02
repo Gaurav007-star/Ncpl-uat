@@ -29,8 +29,8 @@ const App = () => {
         <Route path="/service" element={<ServicePage />} />
         <Route path="/project" element={<ProjectPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/term" element={<Term />} />
+        <Route path="/privacy-policy" element={<Privacy />} />
+        <Route path="/terms-conditions" element={<Term />} />
 
       </Routes>
     </BrowserRouter>

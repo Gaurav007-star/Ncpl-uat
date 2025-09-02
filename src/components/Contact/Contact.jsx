@@ -185,11 +185,19 @@ const Contact = () => {
 
               <p className="text-xs font-plein text-secondary text-center">
                 By contacting us, you agree to our{" "}
-                <Link to="/term" target="_blank" className="underline">
-                  Terms of Service
+                <Link
+                  to="/terms-conditions"
+                  target="_blank"
+                  className="underline"
+                >
+                  Terms and Conditions
                 </Link>{" "}
                 and{" "}
-                <Link to="/privacy" target="_blank" className="underline">
+                <Link
+                  to="/privacy-policy"
+                  target="_blank"
+                  className="underline"
+                >
                   Privacy Policy
                 </Link>
                 .
