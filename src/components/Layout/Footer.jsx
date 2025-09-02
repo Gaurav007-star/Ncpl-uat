@@ -54,7 +54,7 @@ export default function Footer() {
     <footer className="bg-[#111827] text-gray-300 px-[10vw] py-16">
       {" "}
       {/* Increased padding for bigger footer */}
-      <div className="max-w-7xl mx-auto flex flex-wrap justify-between gap-12">
+      <div className="w-full mx-auto flex flex-wrap justify-between gap-12">
         {/* Company Info */}
         <div className="flex-1 min-w-[240px]">
           <h2 className="text-white text-2xl font-clash mb-4">
