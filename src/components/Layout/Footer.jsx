@@ -12,13 +12,12 @@ const footerData = {
     description:
       "Professional construction services with over 20 years of experience. Building dreams into reality with quality and excellence.",
     socials: [
-      { icon: <FaFacebook />, link: "#" },
-      { icon: <FaSquareXTwitter />, link: "#" },
+      { icon: <FaFacebook />, link: "https://www.facebook.com/profile.php?id=61579343348102" },
+      { icon: <FaSquareXTwitter />, link: "https://x.com/NTNL_19" },
       {
         icon: <FaLinkedin />,
         link: "https://www.linkedin.com/company/ntnl-construction-pvt-ltd/"
       },
-      { icon: <RiInstagramFill />, link: "#" }
     ]
   },
   services: [
@@ -66,13 +65,14 @@ export default function Footer() {
           </p>
           <div className="flex gap-4">
             {footerData.company.socials.map((social, i) => (
-              <Link
+              <a
                 key={i}
-                to={social.link}
+                href={social.link}
+                target="_blank"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 text-white hover:bg-primary hover:text-white transition"
               >
                 {social.icon}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
