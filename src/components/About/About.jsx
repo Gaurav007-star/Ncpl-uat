@@ -38,7 +38,7 @@ const About = () => {
         <main className="mt-6">
           {/* Newspaper style = columns */}
           <div className="columns-1 gap-10 text-justify font-plein leading-relaxed text-[18px] md:text-[18px]">
-            <p className="mb-4 first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:leading-none">
+            <p className="mb-4">
               Established in 2005, at the dawn of the industrial renaissance in
               the Tarai region of Rudrapur, Udham Singh Nagar, Uttarakhand,
               National Construction has been at the forefront of providing

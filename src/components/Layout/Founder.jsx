@@ -1,10 +1,9 @@
 import React from "react";
-import Founder from "../../assets/founderImage.jpg"; // <-- Replace with your founder's image path
+import FounderBackground from "../../assets/founderImage.jpg"; // <-- Replace with your founder's image path
 import { FaLinkedin } from "react-icons/fa6";
 import { Navigate, useNavigate } from "react-router";
 
-export default function NewspaperLayout() {
-
+const Founder = () => {
   const navigate = useNavigate();
 
   return (
@@ -13,7 +12,7 @@ export default function NewspaperLayout() {
         {/* Header / Masthead */}
         <header className="pb-4 border-b border-neutral-300 text-primary">
           <h1 className="text-3xl md:text-4xl lg:text-[60px] font-medium leading-tight mt-2">
-            Born and Raised in Uttar Pradesh: A Journey of Faith and Resilience
+            A Journey of Faith and Resilience
           </h1>
         </header>
 
@@ -22,8 +21,8 @@ export default function NewspaperLayout() {
           {/* Left: Article */}
           <article className="md:col-span-2">
             {/* Newspaper-style columns */}
-            <div className="columns-2 gap-8 leading-relaxed text-[18px] text-justify">
-              <p className="mb-4 first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:leading-none">
+            <div className="columns-1 gap-8 leading-relaxed text-[18px] text-justify">
+              <p className="mb-4">
                 Born and raised in a small village in Uttar Pradesh, our
                 founder’s story is rooted in simplicity, resilience, and
                 unshakable faith. The grandson of a freedom fighter and son of a
@@ -74,12 +73,18 @@ export default function NewspaperLayout() {
             <figure className="sticky top-6">
               {/* Smaller Image */}
               <img
-                src={Founder}
+                src={FounderBackground}
                 alt="Founder Portrait"
                 className="w-2/3 mx-auto h-auto object-cover rounded-2xl"
               />
               <figcaption className="text-[18px] italic mt-2 text-center text-neutral-700 flex items-center justify-center gap-2">
-                JB Singh <a href="https://www.linkedin.com/in/j-b-singh/" target="_blank"><FaLinkedin className="text-[24px]"/></a>
+                JB Singh{" "}
+                <a
+                  href="https://www.linkedin.com/in/j-b-singh/"
+                  target="_blank"
+                >
+                  <FaLinkedin className="text-[24px]" />
+                </a>
               </figcaption>
             </figure>
           </aside>
@@ -87,4 +92,6 @@ export default function NewspaperLayout() {
       </div>
     </div>
   );
-}
+};
+
+export default Founder;
