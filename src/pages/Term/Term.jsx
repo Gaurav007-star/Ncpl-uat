@@ -1,14 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Navbar from "@/components/Layout/Navbar";
+import Footer from "@/components/Layout/Footer";
 
 const Term = () => {
   return (
-    <div className="bg-gray-50 h-max py-16 px-6 lg:px-20 font-plein ">
+    <div className="w-full h-max font-plein ">
+      <Navbar />
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-5xl mx-auto"
+        className="w-full h-max px-[10vw] max-[450px]:px-5 my-10"
       >
         {/* Heading */}
         <h1 className="font-plein text-[60px] text-primary mb-5 leading-tight">
@@ -19,10 +22,14 @@ const Term = () => {
         <div className="space-y-5 text-gray-700 leading-relaxed">
           <section>
             <p>
-              At <span className="font-semibold">NTNL Construction Private Limited</span>, we
-              respect your privacy and are committed to protecting the personal
-              information you share with us. This Privacy Policy explains how we
-              collect, use, and safeguard your data when you visit our Website.
+              At{" "}
+              <span className="font-semibold">
+                NTNL Construction Private Limited
+              </span>
+              , we respect your privacy and are committed to protecting the
+              personal information you share with us. This Privacy Policy
+              explains how we collect, use, and safeguard your data when you
+              visit our Website.
             </p>
           </section>
 
@@ -32,10 +39,10 @@ const Term = () => {
             </h2>
             <p>
               We may collect personal information such as your name, email
-              address, phone number, and project-related details when you contact
-              us through our Website or submit inquiries. Additionally, we may
-              collect non-personal data like browser type, IP address, and usage
-              patterns to improve your experience.
+              address, phone number, and project-related details when you
+              contact us through our Website or submit inquiries. Additionally,
+              we may collect non-personal data like browser type, IP address,
+              and usage patterns to improve your experience.
             </p>
           </section>
 
@@ -57,7 +64,8 @@ const Term = () => {
             <p>
               We implement strict security measures to protect your personal
               information from unauthorized access, alteration, or disclosure.
-              However, no online transmission can be guaranteed to be 100% secure.
+              However, no online transmission can be guaranteed to be 100%
+              secure.
             </p>
           </section>
 
@@ -84,6 +92,7 @@ const Term = () => {
           </section>
         </div>
       </motion.div>
+      <Footer />
     </div>
   );
 };
