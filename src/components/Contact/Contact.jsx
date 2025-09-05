@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router"; // if you use react-router-dom, change this import
 import Navbar from "../Layout/Navbar";
 import TopSection from "../Layout/TopSection";
@@ -91,7 +91,73 @@ const ClientImages = [
   Client37
 ];
 
+import validator from "validator";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
+
 const Contact = () => {
+  const [contactData, setContact] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+
+  const [notValid, setValid] = useState(false);
+  const [errMessage, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef(null);
+
+  const InputHandler = (e) => {
+    setContact({ ...contactData, [e.target.name]: e.target.value });
+  };
+
+  // FORM SUBMIT HANDLER
+  const FormSubmitHandler = async (e) => {
+    e.preventDefault();
+    if (!validator.isEmail(contactData.email)) {
+      setValid(true);
+      setMessage("Provide valid email");
+      return;
+    }
+    if (!validator.isMobilePhone(contactData.phone)) {
+      setValid(true);
+      setMessage("Provide valid phone number");
+      return;
+    }
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicId = import.meta.env.VITE_EMAILJS_PUBLIC_ID;
+
+    setLoading(true);
+
+    await emailjs
+      .sendForm(serviceId, templateId, formRef.current, {
+        publicKey: publicId
+      })
+      .then(
+        () => {
+          toast.success("Email send successfully");
+          setLoading(false);
+        },
+        (error) => {
+          setValid(true);
+          setMessage("Failed to send");
+        }
+      );
+
+    setLoading(false);
+    setValid(false);
+    setMessage("");
+    setContact({
+      name: "",
+      email: "",
+      phone: "",
+      message: ""
+    });
+  };
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -146,41 +212,60 @@ const Contact = () => {
               You can reach us anytime
             </p>
 
-            <form className="space-y-4">
-              <div className="flex gap-3">
-                <input
-                  type="text"
-                  placeholder="First name"
-                  className="w-1/2 border border-gray-300 bg-gray-50 rounded-lg p-3 font-plein text-secondary
+            <form
+              ref={formRef}
+              className="space-y-4"
+              onSubmit={FormSubmitHandler}
+            >
+              <input
+                type="text"
+                placeholder="Username"
+                name="name"
+                required
+                className="w-full border border-gray-300 bg-gray-50 rounded-lg p-3 font-plein text-secondary
                            focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                />
-                <input
-                  type="text"
-                  placeholder="Last name"
-                  className="w-1/2 border border-gray-300 bg-gray-50 rounded-lg p-3 font-plein text-secondary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                />
-              </div>
+                onChange={InputHandler}
+              />
               <input
                 type="email"
                 placeholder="Your email"
+                name="email"
+                required
                 className="w-full border border-gray-300 bg-gray-50 rounded-lg p-3 font-plein text-secondary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                onChange={InputHandler}
               />
               <input
                 type="text"
                 placeholder="Phone number"
+                name="phone"
+                required
                 className="w-full border border-gray-300 bg-gray-50 rounded-lg p-3 font-plein text-secondary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                onChange={InputHandler}
               />
               <textarea
                 placeholder="How can we help?"
+                name="message"
+                required
                 maxLength={120}
                 className="w-full border border-gray-300 bg-gray-50 rounded-lg p-3 font-plein text-secondary h-28 resize-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                onChange={InputHandler}
               ></textarea>
+              {notValid && (
+                <div className="status-box w-full  rounded-md p-4 text-center bg-[#f2f2f2]">
+                  <h1 className="text-primary font-plein">{errMessage}</h1>
+                </div>
+              )}
 
               <button
                 type="submit"
                 className="w-full bg-primary text-white py-3 rounded-xl font-clash hover:opacity-90 transition cursor-pointer"
+                disabled={loading}
               >
-                Submit
+                {loading ? (
+                  <span className="loading loading-dots loading-md"></span>
+                ) : (
+                  <span>Submit</span>
+                )}
               </button>
 
               <p className="text-xs font-plein text-secondary text-center">
