@@ -221,6 +221,7 @@ const Contact = () => {
                 type="text"
                 placeholder="Username"
                 name="name"
+                value={contactData.name}
                 required
                 className="w-full border border-gray-300 bg-gray-50 rounded-lg p-3 font-plein text-secondary
                            focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
@@ -230,6 +231,7 @@ const Contact = () => {
                 type="email"
                 placeholder="Your email"
                 name="email"
+                value={contactData.email}
                 required
                 className="w-full border border-gray-300 bg-gray-50 rounded-lg p-3 font-plein text-secondary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                 onChange={InputHandler}
@@ -238,6 +240,7 @@ const Contact = () => {
                 type="text"
                 placeholder="Phone number"
                 name="phone"
+                value={contactData.phone}
                 required
                 className="w-full border border-gray-300 bg-gray-50 rounded-lg p-3 font-plein text-secondary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                 onChange={InputHandler}
@@ -245,6 +248,7 @@ const Contact = () => {
               <textarea
                 placeholder="How can we help?"
                 name="message"
+                value={contactData.message}
                 required
                 maxLength={120}
                 className="w-full border border-gray-300 bg-gray-50 rounded-lg p-3 font-plein text-secondary h-28 resize-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
