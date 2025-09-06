@@ -65,6 +65,4 @@ app.post("/api/sendmail", async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT, () => {
-  console.log("listining");
-});
+export default app;
