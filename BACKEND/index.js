@@ -36,8 +36,8 @@ app.post("/api/sendmail", async (req, res) => {
   });
 
   let mailOptions = {
-    from: process.env.MY_EMAIL, // better to use your verified email, not arbitrary
-    to: "sarkargaurav59@gmail.com",
+    from: process.env.MY_EMAIL,
+    to: process.env.MY_RECEIVER_EMAIL,
     subject: "You have received new contact from NTNL website",
     text: `
     Name : ${name}
@@ -71,8 +71,8 @@ app.get("/getvalue", (req, res) => {
   });
 });
 
-app.listen(process.env.PORT,()=>{
+app.listen(process.env.PORT, () => {
   console.log("listining");
-})
+});
 
 export default app;
