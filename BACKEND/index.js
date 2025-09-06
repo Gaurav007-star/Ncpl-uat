@@ -37,7 +37,7 @@ app.post("/api/sendmail", async (req, res) => {
 
   let mailOptions = {
     from: process.env.MY_EMAIL, // better to use your verified email, not arbitrary
-    to: process.env.MY_RECEIVER_EMAIL, // so replies go to the sender
+    to: "sarkargaurav59@gmail.com",
     subject: "You have received new contact from NTNL website",
     text: `
     Name : ${name}
@@ -53,7 +53,7 @@ app.post("/api/sendmail", async (req, res) => {
 
   try {
     const responseData = await transporter.sendMail(mailOptions);
-    console.log(responseData);
+    // console.log(responseData);
 
     res.status(200).json({
       message: "Message sent successfully"
@@ -70,5 +70,9 @@ app.get("/getvalue", (req, res) => {
     message: "GEt value"
   });
 });
+
+app.listen(process.env.PORT,()=>{
+  console.log("listining");
+})
 
 export default app;
