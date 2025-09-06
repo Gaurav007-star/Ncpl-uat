@@ -5,11 +5,11 @@ import cors from "cors";
 import express from "express";
 import morgan from "morgan";
 import nodemailer from "nodemailer";
+import axios from "axios";
 
 const app = express();
 app.use(cors());
 app.use(morgan("dev"));
-4;
 app.use(express.json());
 app.use(
   express.urlencoded({
@@ -18,11 +18,21 @@ app.use(
 );
 
 app.post("/api/sendmail", async (req, res) => {
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone, message, captchaKey } = req.body;
 
-  if (!name || !email || !phone || !message) {
-    res.status(400).json({
+  if (!name || !email || !phone || !message || !captchaKey) {
+    return res.status(400).json({
       message: "Provide correct details"
+    });
+  }
+
+  const verifyCaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.CAPTCHA_SECRET_KEY}&response=${captchaKey}`;
+
+  const captchaVerifyStatus = await axios.post(verifyCaptchaUrl);
+
+  if (!captchaVerifyStatus.data.success) {
+    return res.status(400).json({
+      message: "Captcha verification failed"
     });
   }
 
@@ -43,7 +53,7 @@ app.post("/api/sendmail", async (req, res) => {
     Name : ${name}
     Email : ${email}
     Phone : ${phone}
-           
+
     ${message}
 
     Thank you,
