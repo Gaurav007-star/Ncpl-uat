@@ -135,7 +135,7 @@ const Contact = () => {
 
     // EMAIL SEND API CALL
     try {
-      const { data } = await axios.post(`http://localhost:5004/api/sendmail`, {
+      const { data } = await axios.post(`https://ncpl-uat-py8l.vercel.app/api/sendmail`, {
         ...contactData,
         captchaKey
       });
@@ -152,9 +152,7 @@ const Contact = () => {
       toast.error(error.response?.data?.message || "Failed to send message");
     }finally{
       setLoading(false);
-    }
-
-          
+    }          
   };
 
   // CAPTCHA HANDLER
@@ -169,6 +167,7 @@ const Contact = () => {
       behavior: "smooth"
     });
   }, []);
+  
 
   return (
     <div className="w-full h-max bg-white">
