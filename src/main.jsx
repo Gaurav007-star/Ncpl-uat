@@ -1,23 +1,40 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
-import { Bounce, ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById("root")).render(
   <>
     <App />
-    <ToastContainer
-      position="top-center"
-      autoClose={3000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick={false}
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="colored"
-      transition={Bounce}
+    <Toaster
+      toastOptions={{
+        success: {
+          duration: 2000,
+          position: "top-center",
+          iconTheme: {
+            primary: "#004aad"
+          },
+          style: {
+            backdropFilter: blur("10px"),
+            backgroundColor: "#f1f2f2",
+            padding: "20px 20px",
+            boxShadow: "none"
+          }
+        },
+        error: {
+          duration: 2000,
+          position: "top-center",
+          iconTheme: {
+            primary: "#004aad"
+          },
+          style: {
+            backdropFilter: blur("10px"),
+            backgroundColor: "#f1f2f2",
+            padding: "20px 20px",
+            boxShadow: "none"
+          }
+        }
+      }}
     />
   </>
 );

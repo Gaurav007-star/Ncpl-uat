@@ -91,7 +91,8 @@ const ClientImages = [
 
 import validator from "validator";
 import axios from "axios";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
   const [contactData, setContact] = useState({
@@ -101,11 +102,14 @@ const Contact = () => {
     message: ""
   });
 
-  const [notValid, setValid] = useState(false);
-  const [errMessage, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const formRef = useRef(null);
 
+  const [captchaStatus, setCaptchaStatus] = useState(false);
+  const [captchaKey, setCaptchaKey] = useState(null);
+
+  const formRef = useRef(null);
+  const recaptchaRef = useRef();
+  
   const InputHandler = (e) => {
     setContact({ ...contactData, [e.target.name]: e.target.value });
   };
@@ -114,13 +118,16 @@ const Contact = () => {
   const FormSubmitHandler = async (e) => {
     e.preventDefault();
     if (!validator.isEmail(contactData.email)) {
-      setValid(true);
-      setMessage("Provide a valid email");
+      toast.error("Provide a valid email");
       return;
     }
     if (!validator.isMobilePhone(contactData.phone)) {
-      setValid(true);
-      setMessage("Provide a valid phone number");
+      toast.error("Provide a valid phone number");
+      return;
+    }
+
+    if (!captchaStatus) {
+      toast.error("Please fill the captcha");
       return;
     }
 
@@ -128,23 +135,32 @@ const Contact = () => {
 
     // EMAIL SEND API CALL
     try {
-      const { data } = await axios.post(
-        `https://ncpl-uat-py8l.vercel.app/api/sendmail`,
-        contactData
-      );
+      const { data } = await axios.post(`http://localhost:5004/api/sendmail`, {
+        ...contactData,
+        captchaKey
+      });
       toast.success(data?.message || "Message sent successfully");
+
+      setContact({
+        name: "",
+        email: "",
+        phone: "",
+        message: ""
+      });
+      recaptchaRef.current.reset();
     } catch (error) {
       toast.error(error.response?.data?.message || "Failed to send message");
+    }finally{
+      setLoading(false);
     }
-    setLoading(false);
-    setValid(false);
-    setMessage("");
-    setContact({
-      name: "",
-      email: "",
-      phone: "",
-      message: ""
-    });
+
+          
+  };
+
+  // CAPTCHA HANDLER
+  const onCaptchaHandler = (value) => {
+    setCaptchaKey(value);
+    setCaptchaStatus(true);
   };
 
   useEffect(() => {
@@ -184,7 +200,7 @@ const Contact = () => {
       <section className="w-full px-[10vw] max-[450px]:px-5 pt-10 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
           {/* Left: Image */}
-          <div className="rounded-2xl overflow-hidden h-[600px]">
+          <div className="rounded-2xl overflow-hidden h-[700px]">
             <img
               src={ConstructionWorker}
               alt="NTNL office building"
@@ -193,7 +209,7 @@ const Contact = () => {
           </div>
 
           {/* Right: Contact Form (unchanged fields) */}
-          <div className="w-full h-full bg-white border border-gray-200 rounded-2xl p-8 lg:p-10">
+          <div className="w-full h-full bg-white border border-gray-200 rounded-2xl p-8 max-[450px]:p-4 lg:p-10">
             <h2 className="font-clash text-3xl text-primary mb-2">
               Let’s Get In Touch
             </h2>
@@ -239,15 +255,17 @@ const Contact = () => {
                 name="message"
                 value={contactData.message}
                 required
-                maxLength={120}
                 className="w-full border border-gray-300 bg-gray-50 rounded-lg p-3 font-plein text-secondary h-28 resize-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                 onChange={InputHandler}
               ></textarea>
-              {notValid && (
-                <div className="status-box w-full  rounded-md p-4 text-center bg-[#f2f2f2]">
-                  <h1 className="text-primary font-plein">{errMessage}</h1>
-                </div>
-              )}
+
+              <div className="captcha-section w-full h-max">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
+                  onChange={onCaptchaHandler}
+                />
+              </div>
 
               <button
                 type="submit"
@@ -260,7 +278,6 @@ const Contact = () => {
                   <span>Submit</span>
                 )}
               </button>
-
               <p className="text-xs font-plein text-secondary text-center">
                 By contacting us, you agree to our{" "}
                 <Link
