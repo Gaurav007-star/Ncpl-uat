@@ -65,4 +65,10 @@ app.post("/api/sendmail", async (req, res) => {
   }
 });
 
+app.get("/getvalue", (req, res) => {
+  res.status(200).json({
+    message: "GEt value"
+  });
+});
+
 export default app;
