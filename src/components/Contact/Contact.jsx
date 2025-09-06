@@ -129,7 +129,7 @@ const Contact = () => {
     // EMAIL SEND API CALL
     try {
       const { data } = await axios.post(
-        `http://localhost:5004/api/sendmail`,
+        `https://ncpl-uat-py8l.vercel.app/api/sendmail`,
         contactData
       );
       toast.success(data?.message || "Message sent successfully");
