@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router"; // if you use react-router-dom, change this import
 import Navbar from "../Layout/Navbar";
 import TopSection from "../Layout/TopSection";
-import InfinitySlider from "../Layout/InfinitySlider";
-import CtaSection from "../Layout/CtaSection";
 import Footer from "../Layout/Footer";
 import ConstructionWorker from "../../assets/constructionWorker.jpg";
 import ContactTopImage from "../../assets/Contacts.jpg";
@@ -92,7 +90,7 @@ const ClientImages = [
 ];
 
 import validator from "validator";
-import emailjs from "@emailjs/browser";
+import axios from "axios";
 import { toast } from "react-toastify";
 
 const Contact = () => {
@@ -117,36 +115,27 @@ const Contact = () => {
     e.preventDefault();
     if (!validator.isEmail(contactData.email)) {
       setValid(true);
-      setMessage("Provide valid email");
+      setMessage("Provide a valid email");
       return;
     }
     if (!validator.isMobilePhone(contactData.phone)) {
       setValid(true);
-      setMessage("Provide valid phone number");
+      setMessage("Provide a valid phone number");
       return;
     }
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicId = import.meta.env.VITE_EMAILJS_PUBLIC_ID;
-
     setLoading(true);
 
-    await emailjs
-      .sendForm(serviceId, templateId, formRef.current, {
-        publicKey: publicId
-      })
-      .then(
-        () => {
-          toast.success("Email send successfully");
-          setLoading(false);
-        },
-        (error) => {
-          setValid(true);
-          setMessage("Failed to send");
-        }
+    // EMAIL SEND API CALL
+    try {
+      const { data } = await axios.post(
+        `http://localhost:5004/api/sendmail`,
+        contactData
       );
-
+      toast.success(data?.message || "Message sent successfully");
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Failed to send message");
+    }
     setLoading(false);
     setValid(false);
     setMessage("");

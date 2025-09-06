@@ -68,8 +68,7 @@ const Navbar = () => {
   const [isInService, setIsInService] = useState(false);
   const navigate = useNavigate();
   const path = useLocation();
-  console.log(path);
-  
+
   useEffect(() => {
     let target = "";
 
